@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* === Extensions du thème === */
+@theme {
+  --color-congo-green: #57F52F;
+  --color-congo-dark: #064025;
+  --color-congo-medium: #1E8B31;
+  --color-congo-bright: #26AD39;
+  --color-congo-lime: #1DDA59;
+
+  --font-poppins: "Poppins", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+}
+@layer base {
+  * {
+    text-decoration-line: none;
+  }
+  body {
+    font-family: var(--font-roboto);
+    background-color: #F9F9F9;
+    color: #333333;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-poppins);
+    color: var(--color-congo-dark);
+  }
+  a {
+    color: var(--color-congo-green);
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--color-congo-green);
+  }
+
+  /* @media (min-width: 720px) {
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 14px;
+    }
+  } */
+}
