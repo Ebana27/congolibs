@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'apprentissage et de teste de tailwindcss</title>
+    <link rel="stylesheet" href="./public/output.css">
+</head>
+<body>
+   <main class="flex flex-col items-center justify-center h-screen">
+     <h1 class="text-3xl font-bold text-center m-[25px]">Teste tailwindcss</h1>
+     <p class="w-4/10 text-center">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo doloremque ducimus officiis quam deleniti? Mollitia veritatis quas sequi ipsum? Fugit error iure aliquid deserunt dignissimos animi quo odio quos tempore.
+     </p>
+    <button id="but" type="submit" class="bg-orange-500 text-white text-2xl rounded-[8px] w-[200px] text-center mx-auto my-[16px] p-[6px] hover:bg-black duration-300 cursor-pointer">Acheter</button>
+   </main>
+   <script>
+      const btn = document.getElementById('but');
+      console.log(btn);
+
+      btn.addEventListener('click', () => {
+         alert("Vous allez être rediriger vers une autre page");
+      })
+      
+   </script>
+</body>
+</html>

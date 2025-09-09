@@ -1,509 +1,574 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-   <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Bienvenue sur congolibs</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      body {
-        box-sizing: border-box;
-      }
-
-      .bg-custom-green-1 {
-        background-color: #57F52F;
-      }
-      .text-custom-green-1 {
-        color: #57F52F;
-      }
-      .bg-custom-green-2 {
-        background-color: #1DDA59;
-      }
-      .text-custom-green-2 {
-        color: #1DDA59;
-      }
-      .bg-custom-dark-green {
-        background-color: #064025;
-      }
-      .text-custom-dark-green {
-        color: #064025;
-      }
-      .bg-custom-gradient {
-        background: linear-gradient(to right, #57F52F, #1DDA59);
-      }
-      .text-black {
-        color: #000000;
-      }
-      .animate-fade-in-up {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
-</head>
-<body>
-    <div class="h-[4704px] bg-white rounded-lg outline outline-2 outline-offset-[-2px] outline-gray-300 inline-flex flex-col justify-start items-start overflow-hidden">
-  <div class="h-[4150px] bg-black/0 flex flex-col justify-start items-start">
-    <div class="w-[1440px] h-16 relative bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] border-gray-200">
-      <div class="w-[1280px] h-16 left-[80px] top-0 absolute bg-black/0 border-gray-200">
-        <div class="w-48 h-11 left-[32px] top-[12px] absolute bg-black/0 border-gray-200">
-          <div class="w-7 h-6 left-[8.50px] top-[10px] absolute inline-flex justify-center items-center overflow-hidden">
-            <div class="w-7 h-6 relative bg-black/0 border-gray-200 overflow-hidden">
-              <div class="w-7 h-5 left-0 top-[1.50px] absolute bg-white"></div>
-            </div>
-          </div>
-          <div class="w-32 h-7 left-[56px] top-[7px] absolute justify-start text-black/0 text-2xl font-bold font-['Montserrat'] leading-normal">CongoLibs</div>
-        </div>
-        <div class="w-[940px] h-6 left-[378px] top-[24px] absolute bg-black/0 border-gray-200">
-          <div class="w-14 h-6 left-0 top-0 absolute bg-black/0 border-gray-200">
-            <div class="w-14 h-5 left-0 top-[2px] absolute justify-start text-black text-base font-medium font-['Fredoka'] leading-none">Accueil</div>
-          </div>
-          <div class="w-16 h-6 left-[91px] top-0 absolute bg-black/0 border-gray-200">
-            <div class="w-16 h-5 left-[-0.33px] top-[2px] absolute justify-start text-black text-base font-medium font-['Fredoka'] leading-none">Librairie</div>
-          </div>
-          <div class="w-20 h-6 left-[184px] top-0 absolute bg-black/0 border-gray-200">
-            <div class="w-24 h-5 left-0 top-[2px] absolute justify-start text-black text-base font-medium font-['Fredoka'] leading-none">Services</div>
-          </div>
-          <div class="w-28 h-6 left-[374px] top-0 absolute bg-black/0 border-gray-200">
-            <div class="w-28 h-5 left-[-10px] top-[2px] absolute justify-start text-black text-base font-medium font-['Fredoka'] leading-none">Commentaire</div>
-          </div>
-          <div class="w-28 h-6 left-[380px] top-0 absolute bg-black/0 border-gray-200"></div>
-          <div class="w-28 h-6 left-[357px] top-0 absolute bg-black/0 border-gray-200">
-            <div class="w-24 h-5 left-[-93px] top-[2px] absolute justify-start text-black text-base font-medium font-['Fredoka'] leading-none">Apprendre<br/> </div>
-          </div>
-          <div class="w-48 h-6 left-[724px] top-0 absolute bg-black/0 border-gray-200">
-            <div class="w-32 h-9 left-0 top-[-6px] absolute bg-custom-gradient rounded-lg shadow-[0px_1px_3px_0px_rgba(0,0,0,0.10)] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.10)] border-gray-200">
-              <div class="w-24 h-5 left-[16px] top-[5px] absolute justify-start text-white text-lg font-semibold font-['Fredoka']">Connexion</div>
-            </div>
-            <div class="w-12 h-9 left-[139px] top-[-6px] absolute bg-custom-gradient rounded-lg shadow-[0px_1px_3px_0px_rgba(0,0,0,0.10)] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.10)] border-gray-200"></div>
-          </div>
-        </div>
-        <div class="w-80 h-16 left-[1px] top-0 absolute overflow-hidden">
-          <img class="w-64 h-64 left-[16px] top-[-93px] absolute" src="https://placehold.co/254x254" />
-        </div>
-      </div>
-    </div>
-    <div class="w-[1440px] h-[1343px] relative bg-black/0 border-gray-200">
-      <div class="w-[1466px] h-[4161px] left-[-28px] top-[1524px] absolute rounded-lg inline-flex flex-col justify-start items-start overflow-hidden">
-        <div class="self-stretch h-[4460px] relative bg-white border-[#064025]"></div>
-      </div>
-      <div class="w-[1466px] h-[2917px] left-[-13px] top-[1384px] absolute bg-black/0 border-[#064025]">
-        <div class="w-[1466px] h-[969px] left-0 top-0 absolute bg-black/0 border-[#064025]">
-          <div class="w-[1280px] h-[971px] left-[80px] top-[7px] absolute bg-black/0 border-[#064025]">
-            <div class="w-[1248px] h-[782px] left-[16px] top-[152px] absolute bg-black/0 border-[#064025]">
-              <div class="w-24 h-24 left-[587px] top-[594px] absolute bg-white"></div>
-            </div>
-            <div class="w-[1440px] h-[560px] left-[-82px] top-[104px] absolute bg-black/0 border-gray-200">
-              <div class="w-[1248px] h-28 left-[96px] top-[64px] absolute bg-black/0 border-gray-200">
-                <div class="w-[611px] h-14 left-[330px] top-[85px] absolute text-center justify-start text-custom-dark-green text-2xl font-light font-['Roboto'] leading-normal">Notre plateforme offre des solutions adaptées aux besoins éducatifs congolais, avec une approche moderne et accessible.</div>
-                <div class="w-[683px] h-10 left-[288px] top-[-33px] absolute text-center justify-start"><span class="text-black text-4xl font-bold font-['Poppins'] leading-10">Nos </span><span class="text-custom-green-2 text-4xl font-bold font-['Poppins'] leading-10">Services</span><span class="text-black text-4xl font-bold font-['Poppins'] leading-10">, Pourquoi choisir</span><span class="text-custom-green-2 text-4xl font-bold font-['Poppins'] leading-10"> CongoLibs</span><span class="text-black text-4xl font-bold font-['Poppins'] leading-10"> ?</span></div>
-              </div>
-              <div class="w-[1440px] h-[1096px] left-0 top-[70px] absolute bg-black/0 border-gray-200">
-                <div class="w-[1280px] h-[1002px] left-[80px] top-[64px] absolute bg-black/0 border-gray-200">
-                  <div class="w-[1280px] h-[584px] left-0 top-[156px] absolute bg-black/0 border-gray-200">
-                    <div class="w-96 h-64 left-0 top-0 absolute bg-white rounded-2xl shadow-[0px_4px_6px_0px_rgba(0,0,0,0.10)] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.10)] border-gray-200">
-                      <div class="w-16 h-16 left-[32px] top-[32px] absolute bg-[#57F52F]/10 rounded-full border-gray-200">
-                        <div class="w-5 h-8 left-[21.50px] top-[16px] absolute bg-black/0 border-gray-200">
-                          <div class="w-5 h-6 left-0 top-[3px] absolute inline-flex justify-center items-center">
-                            <div class="w-5 h-6 relative bg-black/0 border-gray-200 overflow-hidden">
-                              <div class="w-5 h-6 left-0 top-0 absolute bg-custom-green-2"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="w-80 h-7 left-[32px] top-[120px] absolute bg-black/0 border-gray-200">
-                        <div class="w-56 h-7 left-0 top-[1px] absolute justify-start text-black text-xl font-normal font-['DM_Sans']">Ressources localisées</div>
-                      </div>
-                      <div class="w-80 h-16 left-[32px] top-[160px] absolute bg-black/0 border-gray-200">
-                        <div class="w-80 h-6 left-0 top-[1px] absolute justify-start text-gray-600 text-base font-normal font-['DM_Sans']">Contenus adaptés au programme scolaire</div>
-                        <div class="w-80 h-6 left-0 top-[25px] absolute justify-start text-gray-600 text-base font-normal font-['DM_Sans']">congolais, conçus pour répondre aux besoins</div>
-                        <div class="w-52 h-6 left-0 top-[49px] absolute justify-start text-gray-600 text-base font-normal font-['DM_Sans']">spécifiques des étudiants.</div>
-                      </div>
-                    </div>
-                    <div class="w-96 h-64 left-[437.33px] top-0 absolute bg-white rounded-2xl shadow-[0px_4px_6px_0px_rgba(0,0,0,0.10)] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.10)] border-gray-200">
-                      <div class="w-16 h-16 left-[32px] top-[32px] absolute bg-[#57F52F]/10 rounded-full border-gray-200">
-                        <div class="w-7 h-8 left-[17px] top-[16px] absolute bg-black/0 border-gray-200">
-                          <div class="w-7 h-6 left-0 top-[3px] absolute inline-flex justify-center items-center">
-                            <div class="w-7 h-6 relative bg-black/0 border-gray-200 overflow-hidden">
-                              <div class="w-7 h-6 left-0 top-0 absolute bg-custom-green-2"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="w-80 h-7 left-[32px] top-[120px] absolute bg-black/0 border-gray-200">
-                        <div class="w-20 h-7 left-0 top-[1px] absolute justify-start text-black text-xl font-normal font-['DM_Sans']">Outils IA</div>
-                      </div>
-                      <div class="w-80 h-16 left-[32px] top-[160px] absolute bg-black/0 border-gray-200">
-                        <div class="w-72 h-6 left-0 top-[1px] absolute justify-start text-gray-600 text-base font-normal font-['DM_Sans']">Outils intelligents pour aider élèves et</div>
-                        <div class="w-80 h-6 left-0 top-[25px] absolute justify-start text-gray-600 text-base font-normal font-['DM_Sans']">enseignants à optimiser l'apprentissage et</div>
-                        <div class="w-32 h-6 left-0 top-[49px] absolute justify-start text-gray-600 text-base font-normal font-['DM_Sans']">l'enseignement.</div>
-                      </div>
-                    </div>
-                    <div class="w-96 h-64 left-[874.66px] top-0 absolute bg-white rounded-2xl shadow-[0px_4px_6px_0px_rgba(0,0,0,0.10)] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.10)] border-gray-200">
-                      <div class="w-16 h-16 left-[32px] top-[32px] absolute bg-[#57F52F]/10 rounded-full border-gray-200">
-                        <div class="w-4 h-8 left-[23px] top-[16px] absolute bg-black/0 border-gray-200">
-                          <div class="w-4 h-6 left-0 top-[3px] absolute inline-flex justify-center items-center">
-                            <div class="w-4 h-6 relative bg-black/0 border-gray-200 overflow-hidden">
-                              <div class="w-4 h-6 left-0 top-0 absolute bg-custom-green-2"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="w-80 h-7 left-[32px] top-[120px] absolute bg-black/0 border-gray-200">
-                        <div class="w-52 h-7 left-0 top-[1px] absolute justify-start text-black text-xl font-normal font-['DM_Sans']">Concours & Examens</div>
-                      </div>
-                      <div class="w-80 h-16 left-[32px] top-[160px] absolute bg-black/0 border-gray-200">
-                        <div class="w-72 h-6 left-0 top-[1px] absolute justify-start text-gray-600 text-base font-normal font-['DM_Sans']">Informations, conseils, calendriers et</div>
-                        <div class="w-72 h-6 left-0 top-[25px] absolute justify-start text-gray-600 text-base font-normal font-['DM_Sans']">préparation pour tous les concours et</div>
-                        <div class="w-40 h-6 left-0 top-[49px] absolute justify-start text-gray-600 text-base font-normal font-['DM_Sans']">examens nationaux.</div>
-                      </div>
-                    </div>
-                    <div class="w-96 h-72 left-0 top-[296px] absolute bg-white rounded-2xl shadow-[0px_4px_6px_0px_rgba(0,0,0,0.10)] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.10)] border-gray-200">
-                      <div class="w-16 h-16 left-[32px] top-[32px] absolute bg-[#57F52F]/10 rounded-full border-gray-200">
-                        <div class="w-6 h-8 left-[20px] top-[16px] absolute bg-black/0 border-gray-200">
-                          <div class="w-6 h-6 left-0 top-[3px] absolute inline-flex justify-center items-center">
-                            <div class="w-6 h-6 relative bg-black/0 border-gray-200 overflow-hidden">
-                              <div class="w-6 h-6 left-0 top-0 absolute bg-custom-green-2"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="w-80 h-7 left-[32px] top-[120px] absolute bg-black/0 border-gray-200">
-                        <div class="w-48 h-7 left-0 top-[1px] absolute justify-start text-black text-xl font-normal font-['DM_Sans']">Orientation & Séries</div>
-                      </div>
-                      <div class="w-80 h-24 left-[32px] top-[160px] absolute bg-black/0 border-gray-200">
-                        <div class="w-72 h-6 left-0 top-[1px] absolute justify-start text-gray-600 text-base font-normal font-['DM_Sans']">Arrêtez de vous demander quelle série</div>
-                        <div class="w-80 h-6 left-0 top-[25px] absolute justify-start text-gray-600 text-base font-normal font-['DM_Sans']">choisir... Découvrez les parcours adaptés</div>
-                        <div class="w-72 h-6 left-0 top-[49px] absolute justify-start text-gray-600 text-base font-normal font-['DM_Sans']">pour devenir informaticien, douanier,</div>
-                        <div class="w-28 h-6 left-0 top-[73px] absolute justify-start text-gray-600 text-base font-normal font-['DM_Sans']">médecin, etc.</div>
-                      </div>
-                    </div>
-                    <div class="w-96 h-72 left-[437.33px] top-[296px] absolute bg-white rounded-2xl shadow-[0px_4px_6px_0px_rgba(0,0,0,0.10)] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.10)] border-gray-200">
-                      <div class="w-16 h-16 left-[32px] top-[32px] absolute bg-[#57F52F]/10 rounded-full border-gray-200">
-                        <div class="w-7 h-8 left-[17px] top-[16px] absolute bg-black/0 border-gray-200">
-                          <div class="w-7 h-6 left-0 top-[3px] absolute inline-flex justify-center items-center">
-                            <div class="w-7 h-6 relative bg-black/0 border-gray-200 overflow-hidden">
-                              <div class="w-7 h-5 left-0 top-[1.50px] absolute bg-custom-green-2"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="w-80 h-7 left-[32px] top-[120px] absolute bg-black/0 border-gray-200">
-                        <div class="w-52 h-7 left-0 top-[1px] absolute justify-start text-black text-xl font-normal font-['DM_Sans']">Universités & Écoles</div>
-                      </div>
-                      <div class="w-80 h-24 left-[32px] top-[160px] absolute bg-black/0 border-gray-200">
-                        <div class="w-72 h-6 left-0 top-[1px] absolute justify-start text-gray-600 text-base font-normal font-['DM_Sans']">Pas seulement une université, mais la</div>
-                        <div class="w-64 h-6 left-0 top-[25px] absolute justify-start text-gray-600 text-base font-normal font-['DM_Sans']">meilleure pour vous. Actualités et</div>
-                        <div class="w-64 h-6 left-0 top-[49px] absolute justify-start text-gray-600 text-base font-normal font-['DM_Sans']">informations centralisées sur les</div>
-                        <div class="w-32 h-6 left-0 top-[73px] absolute justify-start text-gray-600 text-base font-normal font-['DM_Sans']">établissements.</div>
-                      </div>
-                    </div>
-                    <div class="w-96 h-72 left-[874.66px] top-[296px] absolute bg-white rounded-2xl shadow-[0px_4px_6px_0px_rgba(0,0,0,0.10)] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.10)] border-gray-200">
-                      <div class="w-16 h-16 left-[32px] top-[32px] absolute bg-[#57F52F]/10 rounded-full border-gray-200">
-                        <div class="w-7 h-8 left-[17px] top-[16px] absolute bg-black/0 border-gray-200">
-                          <div class="w-7 h-6 left-0 top-[3px] absolute inline-flex justify-center items-center">
-                            <div class="w-7 h-6 relative bg-black/0 border-gray-200 overflow-hidden">
-                              <div class="w-7 h-6 left-0 top-0 absolute bg-custom-green-2"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="w-80 h-7 left-[32px] top-[120px] absolute bg-black/0 border-gray-200">
-                        <div class="w-20 h-7 left-0 top-[1px] absolute justify-start text-black text-xl font-normal font-['DM_Sans']">Allô Prof</div>
-                      </div>
-                      <div class="w-80 h-16 left-[32px] top-[160px] absolute bg-black/0 border-gray-200">
-                        <div class="w-80 h-6 left-0 top-[1px] absolute justify-start text-gray-600 text-base font-normal font-['DM_Sans']">Besoin d'un encadrement ? Souscrivez et</div>
-                        <div class="w-80 h-6 left-0 top-[25px] absolute justify-start text-gray-600 text-base font-normal font-['DM_Sans']">trouvez votre prof particulier adapté à vos</div>
-                        <div class="w-40 h-6 left-0 top-[49px] absolute justify-start text-gray-600 text-base font-normal font-['DM_Sans']">besoins spécifiques.</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="w-[1280px] h-14 left-0 top-[756px] absolute bg-black/0 border-gray-200">
-                    <div class="w-64 h-14 left-[504.73px] top-[4px] absolute bg-black rounded-full shadow-[0px_4px_6px_0px_rgba(0,0,0,0.10)] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.10)] border-gray-200">
-                      <div class="w-44 h-7 left-[34.19px] top-[18px] absolute text-center justify-start text-white text-lg font-normal font-['DM_Sans']">Explorer les services</div>
-                      <div class="w-4 h-6 left-[220.58px] top-[18px] absolute bg-black/0 border-gray-200">
-                        <div class="w-4 h-4 left-0 top-[2.25px] absolute inline-flex justify-center items-center">
-                          <div class="w-4 h-4 relative bg-black/0 border-gray-200 overflow-hidden">
-                            <div class="w-4 h-3.5 left-0 top-[2.25px] absolute bg-white"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="w-[1466px] h-[876px] px-20 py-14 left-0 top-[1069px] absolute bg-white border-[#064025] inline-flex flex-col justify-start items-center gap-3.5">
-          <div class="w-[1280px] h-[606px] relative bg-black/0 border-[#064025]">
-            <div class="w-[1248px] h-12 left-[16px] top-[620px] absolute bg-black/0 border-[#064025]">
-              <div class="w-96 h-12 left-[444px] top-0 absolute bg-custom-gradient rounded-2xl shadow-[0px_4px_6px_0px_rgba(0,0,0,0.10)] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.10)] border-[#064025]">
-                <div class="w-72 h-6 left-[33px] top-[10px] absolute text-center justify-start text-white text-lg font-medium font-['Poppins']">Commencer ma révision</div>
-              </div>
-            </div>
-            <div class="w-[613px] h-24 left-[336px] top-[147px] absolute bg-black/0 border-[#064025]">
-              <div class="w-[658px] h-96 left-[-326px] top-[-46px] absolute bg-black/0 border-[#064025]">
-                <div class="w-80 h-11 left-[45px] top-[394px] absolute bg-black/0 border-[#064025]">
-                  <div class="w-56 h-11 left-0 top-0 absolute bg-black/0 border-[#064025]">
-                    <div class="w-56 h-6 left-0 top-[-3px] absolute justify-start text-black text-xl font-medium font-['Poppins'] leading-normal">15 vidéos disponibles</div>
-                    <div class="w-80 h-5 left-0 top-[24px] absolute justify-start text-gray-500 text-xl font-light font-['Roboto'] leading-normal">Dernière mise à jour: 12/06/2023</div>
-                  </div>
-                  <div class="w-20 h-10 left-[249px] top-[-11px] absolute inline-flex justify-center items-center overflow-hidden">
-                    <div class="w-7 h-3.5 relative bg-black/0 border-[#064025] overflow-hidden">
-                      <div class="w-5 h-3 left-[1px] top-[2px] absolute bg-custom-green-2"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="w-96 h-96 left-[39px] top-[-59px] absolute bg-white rounded-3xl shadow-[0px_10px_15px_0px_rgba(0,0,0,0.10)] shadow-[0px_4px_6px_0px_rgba(0,0,0,0.10)] border-gray-200 overflow-hidden">
-                  <div class="w-96 h-48 left-0 top-0 absolute bg-black/0 border-gray-200">
-                    <img class="w-96 h-48 left-0 top-0 absolute border-gray-200" src="https://placehold.co/405x192" />
-                    <div class="w-96 h-48 left-0 top-0 absolute opacity-0 bg-black/30 border-gray-200"></div>
-                    <div class="w-16 h-7 left-[323.30px] top-[16px] absolute bg-custom-green-1 rounded-full border-gray-200">
-                      <div class="w-16 h-16 left-[-160.30px] top-[49px] absolute bg-[#57F52F]/10 rounded-full border-gray-200">
-                        <div class="w-4 h-7 left-[26px] top-[19px] absolute bg-black/0 border-gray-200">
-                          <div class="w-4 h-6 left-0 top-[1px] absolute inline-flex justify-center items-center">
-                            <div class="w-4 h-6 relative bg-black/0 border-gray-200 overflow-hidden">
-                              <div class="w-4 h-5 left-0 top-[1.50px] absolute bg-custom-gradient"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="w-12 h-5 left-[12px] top-[6px] absolute justify-start text-white text-sm font-medium font-['Inter']">15 min</div>
-                    </div>
-                  </div>
-                  <div class="w-96 h-56 left-0 top-[192px] absolute bg-black/0 border-gray-200">
-                    <div class="w-96 h-10 left-[24px] top-[24px] absolute bg-black/0 border-gray-200">
-                      <div class="w-10 h-10 left-0 top-0 absolute bg-custom-dark-green rounded-full border-gray-200">
-                        <div class="w-3 h-4 left-[14px] top-[11px] absolute bg-black/0 border-gray-200">
-                          <div class="w-3 h-4 left-0 top-0 absolute inline-flex justify-center items-center">
-                            <div class="w-3 h-4 relative bg-black/0 border-gray-200 overflow-hidden">
-                              <div class="w-3 h-4 left-0 top-0 absolute bg-white"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="w-28 h-5 left-[46px] top-[10px] absolute justify-start text-custom-dark-green text-sm font-medium font-['Inter'] leading-tight">Mathématiques</div>
-                    </div>
-                    <div class="w-80 h-7 left-[24px] top-[76px] absolute justify-start text-gray-800 text-xl font-bold font-['Inter'] leading-7">Algèbre Fondamentale</div>
-                    <div class="w-80 h-10 left-[24px] top-[112px] absolute justify-start text-gray-600 text-sm font-normal font-['Roboto'] leading-tight">Apprenez les bases de l'algèbre avec des exemples pratiques et des exercices interactifs.</div>
-                    <div class="w-96 h-8 left-[24px] top-[168px] absolute bg-black/0 border-gray-200">
-                      <div class="w-28 h-8 left-0 top-0 absolute bg-black/0 border-gray-200">
-                        <img class="w-8 h-8 left-0 top-0 absolute rounded-full border-gray-200" src="https://placehold.co/32x32" />
-                        <div class="w-20 h-5 left-[40px] top-[6px] absolute justify-start text-gray-700 text-sm font-medium font-['Inter'] leading-tight">Prof. Martin</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="w-[671px] h-[483px] left-[593px] top-[66px] absolute overflow-hidden">
-              <div class="w-[595px] h-14 left-[58px] top-[133px] absolute text-right justify-start text-custom-dark-green text-2xl font-light font-['Roboto'] leading-normal">Accédez à nos ressources éducatives pour améliorer vos connaissances et vous préparer aux examens.</div>
-              <div class="w-96 h-32 left-[276px] top-[231px] absolute bg-black/0 border-gray-200 inline-flex flex-col justify-center items-end gap-4">
-                <div class="self-stretch h-6 relative bg-black/0 border-gray-200">
-                  <div class="w-6 h-6 left-[367px] top-[-1px] absolute bg-custom-green-1 rounded-full border-gray-200">
-                    <div class="w-2.5 h-4 left-[6.75px] top-[4px] absolute bg-black/0 border-gray-200">
-                      <div class="w-2.5 h-3 left-0 top-[1.50px] absolute inline-flex justify-center items-center">
-                        <div class="w-2.5 h-3 relative bg-black/0 border-gray-200 overflow-hidden">
-                          <div class="w-2.5 h-2 left-0 top-[2.25px] absolute bg-white"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="w-80 h-6 left-[36px] top-[-1px] absolute text-right justify-start text-custom-dark-green text-xl font-light font-['Roboto'] leading-normal">Blog et Actualité</div>
-                </div>
-                <div class="self-stretch h-6 relative bg-black/0 border-gray-200">
-                  <div class="w-6 h-6 left-[367px] top-[-1px] absolute bg-custom-green-1 rounded-full border-gray-200">
-                    <div class="w-2.5 h-4 left-[6.75px] top-[4px] absolute bg-black/0 border-gray-200">
-                      <div class="w-2.5 h-3 left-0 top-[1.50px] absolute inline-flex justify-center items-center">
-                        <div class="w-2.5 h-3 relative bg-black/0 border-gray-200 overflow-hidden">
-                          <div class="w-2.5 h-2 left-0 top-[2.25px] absolute bg-white"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="w-72 h-6 left-[70px] top-[-1px] absolute text-right justify-start text-custom-dark-green text-xl font-light font-['Roboto'] leading-normal">Exercices interactifs et quiz</div>
-                </div>
-                <div class="self-stretch h-6 relative bg-black/0 border-gray-200">
-                  <div class="w-6 h-6 left-[367px] top-[-1px] absolute bg-custom-green-1 rounded-full border-gray-200">
-                    <div class="w-2.5 h-4 left-[6.75px] top-[4px] absolute bg-black/0 border-gray-200">
-                      <div class="w-2.5 h-3 left-0 top-[1.50px] absolute inline-flex justify-center items-center">
-                        <div class="w-2.5 h-3 relative bg-black/0 border-gray-200 overflow-hidden">
-                          <div class="w-2.5 h-2 left-0 top-[2.25px] absolute bg-white"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="w-72 h-6 left-[66px] top-[-1px] absolute text-right justify-start text-custom-dark-green text-xl font-light font-['Roboto'] leading-normal">Vidéos explicatives et tutoriels</div>
-                </div>
-              </div>
-              <div class="w-[595px] h-16 left-[76px] top-[16px] absolute text-right justify-center"><span class="text-black text-4xl font-bold font-['Poppins'] leading-10">Apprendre </span><span class="text-custom-green-2 text-4xl font-bold font-['Poppins'] leading-10">avec</span><span class="text-black text-4xl font-bold font-['Poppins'] leading-10"> Congolibs, les trucs et astuces pour réussire</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="w-[1466px] h-[872px] left-[3px] top-[1849px] absolute bg-black/0 border-[#064025]">
-          <div class="w-[1280px] h-[834px] left-[80px] top-[64px] absolute bg-black/0 border-[#064025]">
-            <div class="w-[1248px] h-24 left-[14px] top-0 absolute bg-black/0 border-[#064025]">
-              <div class="w-[1440px] h-[618px] left-[-98px] top-[78px] absolute bg-black/0 border-gray-200">
-                <div class="w-[1280px] h-[490px] left-[80px] top-[64px] absolute bg-black/0 border-gray-200">
-                  <div class="w-[1248px] h-[490px] left-[16px] top-0 absolute bg-black/0 border-gray-200">
-                    <div class="w-[602px] h-96 left-[22px] top-[17px] absolute"></div>
-                  </div>
-                </div>
-                <div class="w-[481px] h-96 left-[927px] top-[186px] absolute bg-gradient-to-r from-gray-50 via-[#064025] to-[#57F52F] rounded-xl shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
-                  <div class="w-64 h-14 left-[56px] top-[24px] absolute justify-start text-gray-800 text-xl font-bold font-['Poppins'] leading-7">Ajouter un commentaire</div>
-                  <div class="w-5 h-5 left-[24px] top-[27.50px] absolute inline-flex justify-center items-center overflow-hidden">
-                    <div class="w-5 h-5 relative bg-black/0 border-gray-200 overflow-hidden">
-                      <div class="w-5 h-4 left-0 top-[1.25px] absolute bg-custom-gradient"></div>
-                    </div>
-                  </div>
-                  <div class="w-[848px] h-64 left-[24px] top-[68px] absolute bg-black/0 border-gray-200">
-                    <div class="w-[848px] h-20 left-0 top-0 absolute bg-black/0 border-gray-200">
-                      <div class="w-96 h-20 left-0 top-0 absolute bg-black/0 border-gray-200">
-                        <div class="w-96 h-5 left-0 top-0 absolute bg-black/0 border-gray-200">
-                          <div class="w-10 h-5 left-0 top-0 absolute justify-start text-gray-700 text-sm font-medium font-['Poppins']">Nom *</div>
-                        </div>
-                        <div class="w-80 h-10 left-0 top-[28px] absolute bg-white rounded-lg outline outline-2 outline-gray-300 inline-flex justify-center items-center gap-2.5">
-                          <div class="w-72 h-6 relative bg-black/0 border-gray-200">
-                            <div class="w-72 h-5 left-0 top-0 absolute justify-start text-gray-400 text-base font-normal font-['Roboto'] leading-tight">Votre nom complet</div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="w-96 h-20 left-[450.66px] top-0 absolute bg-black/0 border-gray-200">
-                        <div class="w-96 h-5 left-0 top-0 absolute bg-black/0 border-gray-200">
-                          <div class="w-16 h-5 left-0 top-0 absolute justify-start text-gray-700 text-sm font-medium font-['Poppins']">E-mail *</div>
-                        </div>
-                        <div class="w-80 h-10 left-0 top-[28px] absolute bg-white rounded-lg outline outline-2 outline-gray-300 inline-flex justify-center items-center gap-2.5">
-                          <div class="w-72 h-6 relative bg-black/0 border-gray-200">
-                            <div class="w-72 h-5 left-0 top-0 absolute justify-start text-gray-400 text-base font-normal font-['Roboto'] leading-tight">Votre adresse e-mail</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="w-[848px] h-24 left-0 top-[96px] absolute bg-black/0 border-gray-200">
-                      <div class="w-96 h-5 left-0 top-0 absolute bg-black/0 border-gray-200">
-                        <div class="w-24 h-5 left-0 top-0 absolute justify-start text-gray-700 text-sm font-medium font-['Poppins']">Commentaire *</div>
-                      </div>
-                      <div class="w-[848px] h-16 left-0 top-[28px] absolute bg-white rounded-lg outline outline-2 outline-gray-300 inline-flex justify-center items-center gap-2.5">
-                        <div class="w-[800px] h-14 relative bg-black/0 border-gray-200">
-                          <div class="w-[800px] h-5 left-0 top-0 absolute justify-start text-gray-400 text-base font-normal font-['Roboto'] leading-tight">Votre message...</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="w-64 h-14 left-[570px] top-[192px] absolute bg-custom-green-2 rounded-lg shadow-[0px_1px_3px_0px_rgba(0,0,0,0.10)] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.10)] border-gray-200">
-                      <div class="w-40 h-7 left-[52px] top-[12px] absolute text-center justify-start text-white text-lg font-semibold font-['Fredoka']">Envoyer</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="w-[1248px] h-[190px] left-[16px] top-[304px] absolute bg-white rounded-xl shadow-[0px_10px_15px_0px_rgba(0,0,0,0.10)] shadow-[0px_4px_6px_0px_rgba(0,0,0,0.10)] border-gray-200">
-              <div class="w-[1248px] h-16 left-0 top-0 absolute bg-white rounded-xl border-b border-gray-200">
-                <div class="w-56 h-7 left-[32px] top-[20px] absolute justify-start text-black text-xl font-bold font-['Poppins'] leading-7">Abonnez-vous à notre newsletter</div>
-              </div>
-              <div class="w-[1184px] h-16 left-[32px] top-[86px] absolute bg-black/0 border-gray-200">
-                <div class="w-96 h-14 left-0 top-0 absolute bg-white rounded-lg outline outline-2 outline-gray-300 inline-flex justify-center items-center gap-2.5">
-                  <div class="w-80 h-6 relative bg-black/0 border-gray-200">
-                    <div class="w-80 h-5 left-0 top-0 absolute justify-start text-gray-400 text-base font-normal font-['Roboto'] leading-tight">Votre adresse e-mail...</div>
-                  </div>
-                </div>
-                <div class="w-64 h-14 left-[926px] top-0 absolute bg-custom-gradient rounded-lg shadow-[0px_1px_3px_0px_rgba(0,0,0,0.10)] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.10)] border-gray-200">
-                  <div class="w-44 h-7 left-[26px] top-[12px] absolute text-center justify-start text-white text-lg font-semibold font-['Fredoka']">S’abonner</div>
-                </div>
-              </div>
-            </div>
-            <div class="w-[1248px] h-64 left-[16px] top-[526px] absolute bg-custom-dark-green rounded-xl inline-flex flex-col justify-end items-center gap-6">
-              <div class="self-stretch h-[216px] relative bg-black/0 border-gray-200">
-                <div class="w-[1184px] h-[184px] left-[32px] top-[16px] absolute bg-black/0 border-gray-200">
-                  <div class="w-80 h-40 left-0 top-0 absolute bg-black/0 border-gray-200">
-                    <div class="w-80 h-7 left-0 top-0 absolute justify-start text-white text-2xl font-bold font-['Poppins'] leading-normal">CongoLibs</div>
-                    <div class="w-80 h-16 left-0 top-[35px] absolute justify-start text-gray-300 text-base font-normal font-['Poppins'] leading-normal">Votre bibliothèque en ligne pour réussir votre scolarité au Congo.</div>
-                    <div class="w-40 h-16 left-0 top-[103px] absolute bg-black/0 border-gray-200">
-                      <div class="w-10 h-10 left-0 top-0 absolute bg-black/0 border-gray-200">
-                        <div class="w-7 h-7 left-[4px] top-[4px] absolute bg-white rounded-full"></div>
-                        <img class="w-6 h-6 left-[7px] top-[7px] absolute" src="https://placehold.co/24x24" />
-                      </div>
-                      <div class="w-10 h-10 left-[48px] top-0 absolute bg-black/0 border-gray-200">
-                        <div class="w-7 h-7 left-[4px] top-[4px] absolute bg-white rounded-full"></div>
-                        <img class="w-6 h-6 left-[7px] top-[7px] absolute" src="https://placehold.co/24x24" />
-                      </div>
-                      <div class="w-10 h-10 left-[96px] top-0 absolute bg-black/0 border-gray-200">
-                        <div class="w-7 h-7 left-[4px] top-[4px] absolute bg-white rounded-full"></div>
-                        <img class="w-6 h-6 left-[7px] top-[7px] absolute" src="https://placehold.co/24x24" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="w-40 h-40 left-[416px] top-0 absolute bg-black/0 border-gray-200">
-                    <div class="w-28 h-6 left-0 top-0 absolute justify-start text-white text-base font-semibold font-['Poppins'] leading-none">Entreprise</div>
-                    <div class="w-28 h-5 left-0 top-[40px] absolute justify-start text-gray-300 text-base font-normal font-['Poppins'] leading-normal">A Propos</div>
-                    <div class="w-20 h-5 left-0 top-[68px] absolute justify-start text-gray-300 text-base font-normal font-['Poppins'] leading-normal">Blog</div>
-                    <div class="w-28 h-5 left-0 top-[96px] absolute justify-start text-gray-300 text-base font-normal font-['Poppins'] leading-normal">Contactez-nous</div>
-                    <div class="w-28 h-5 left-0 top-[124px] absolute justify-start text-gray-300 text-base font-normal font-['Poppins'] leading-normal">Prix</div>
-                  </div>
-                  <div class="w-40 h-40 left-[624px] top-0 absolute bg-black/0 border-gray-200">
-                    <div class="w-28 h-6 left-0 top-0 absolute justify-start text-white text-base font-semibold font-['Poppins'] leading-none">Services</div>
-                    <div class="w-40 h-5 left-0 top-[40px] absolute justify-start text-gray-300 text-base font-normal font-['Poppins'] leading-normal">Librairie en ligne</div>
-                    <div class="w-40 h-5 left-0 top-[68px] absolute justify-start text-gray-300 text-base font-normal font-['Poppins'] leading-normal">Allô Prof</div>
-                    <div class="w-40 h-5 left-0 top-[96px] absolute justify-start text-gray-300 text-base font-normal font-['Poppins'] leading-normal">Concours & Examens</div>
-                    <div class="w-40 h-5 left-0 top-[124px] absolute justify-start text-gray-300 text-base font-normal font-['Poppins'] leading-normal">Orientation</div>
-                  </div>
-                  <div class="w-56 h-40 left-[848px] top-0 absolute bg-black/0 border-gray-200">
-                    <div class="w-48 h-6 left-0 top-0 absolute justify-start text-white text-base font-semibold font-['Poppins'] leading-none">Contact</div>
-                    <div class="w-52 h-6 left-0 top-[40px] absolute bg-black/0 border-gray-200">
-                      <div class="w-4 h-4 left-0 top-[2.25px] absolute inline-flex justify-center items-center overflow-hidden">
-                        <div class="w-4 h-4 relative bg-black/0 border-[#064025] overflow-hidden">
-                          <div class="w-4 h-4 left-0 top-0 absolute bg-white"></div>
-                        </div>
-                      </div>
-                      <div class="w-40 h-6 left-[24px] top-[-3px] absolute justify-start text-gray-300 text-base font-normal font-['Poppins'] leading-normal">+242 06 775 6084</div>
-                    </div>
-                    <div class="w-72 h-12 left-0 top-[64px] absolute bg-black/0 border-[#064025]">
-                      <div class="w-3 h-4 left-0 top-[15px] absolute inline-flex justify-center items-center overflow-hidden">
-                        <div class="w-3 h-4 relative bg-black/0 border-[#064025] overflow-hidden">
-                          <div class="w-3 h-4 left-0 top-0 absolute bg-white"></div>
-                        </div>
-                      </div>
-                      <div class="w-52 h-12 left-[20px] top-[-2.24px] absolute justify-start text-gray-300 text-base font-normal font-['Poppins'] leading-normal">Brazzaville, République du Congo</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="w-[1248px] h-14 left-[16px] top-[409px] absolute bg-black/0 border-gray-200">
-                <div class="w-80 h-5 left-0 top-[14px] absolute justify-start text-white text-base font-normal font-['Poppins'] leading-none">© 2023 Congolibs. Tous droits réservés.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target);
+    <title>CongoLibs - Apprendre, progresser, devenir maître de ton avenir</title>
+    <link rel="short icon" href="./public/assets/img/icon/icon-lettermini--C.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./public/output.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'congo-green': '#57F52F',
+                        'congo-dark': '#064025',
+                        'congo-medium': '#1E8B31',
+                        'congo-bright': '#26AD39',
+                        'congo-lime': '#1DDA59'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif']
+                    }
                 }
-            });
-        }, { threshold: 0.1 });
+            }
+        }
+    </script>
+</head>
+<body class="font-roboto text-gray-900">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img class="w-[250px] h-[30px]" src="./public/assets/img/logo/main_logo.png" alt="logo_congolibs">
+                    </div>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:block">
+                    <ul class="flex items-center space-x-8">
+                        <li><a href="./index.html" class="text-gray-900 font-medium hover:text-congo-medium transition-colors">Accueil</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-congo-medium transition-colors">Librairie</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-congo-medium transition-colors">Services</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-congo-medium transition-colors">Apprendre</a></li>
+                        <li><a href="#" class="text-gray-700 hover:text-congo-medium transition-colors">Commentaire</a></li>
+                    </ul>
+                </div>
+                
+                <!-- CTA Buttons -->
+                <div class="flex items-center space-x-3">
+                    <button class="bg-gradient-to-r from-congo-green to-congo-lime text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition-shadow">
+                        Connexion
+                    </button>
+                    <button class="bg-gradient-to-r from-congo-green to-congo-lime w-10 h-9 rounded-lg"></button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-        document.querySelectorAll('.animate-fade-in-up').forEach(element => {
-            observer.observe(element);
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-gray-50 via-teal-50 to-emerald-50 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center flex-reverse">
+                <!-- Texte -->
+                <div class="space-y-8">
+                    <h1 class="text-5xl font-bold font-poppins text-congo-dark leading-tight">
+                        Apprends, progresse, deviens maître de ton avenir
+                    </h1>
+                    <p class="text-2xl font-light text-congo-dark font-roboto">
+                        CongoLibs vous accompagne à chaque étape de votre apprentissage, gratuitement et pour tous.
+                    </p>
+                    <button class="bg-gradient-to-r from-congo-green to-congo-lime text-white px-8 py-3 rounded-xl font-bold text-2xl hover:shadow-xl transition-shadow">
+                        Commencer
+                    </button>
+                </div>
+                <!-- Images -->
+                <div class="relative w-full max-w-2xl mx-auto h-80 lg:h-96 flex items-center justify-center -mb-24 z-10">
+                    <!-- Image du fond -->
+                    <img src="./public/assets/img/Home/landing page/Blob.png" alt="Image de fond"
+                        class="absolute inset-0 w-full h-full object-cover rounded-2xl opacity-80 pointer-events-none z-0" />
+                    <!-- Image au premier plan -->
+                    <img src="./public/assets/img/Home/landing page/Jeune_fille_avec_smartphone.png" alt="Image devant"
+                        class="relative z-10 w-3/4 h-auto object-contain rounded-2xl mx-auto" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Library Section -->
+    <section class="py-20 bg-white overflow-hidden relative z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold font-poppins mb-4">
+                    Explorer les <span class="text-congo-lime">livres</span> et les documents dans librairie
+                </h2>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="max-w-2xl mx-auto mb-16">
+                <div class="relative">
+                    <input type="text" placeholder="BAC 2025" class="w-full px-6 py-4 bg-teal-50 rounded-2xl border border-gray-200 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-congo-bright">
+                    <button class="absolute right-2 top-2 text-white w-12 h-12 rounded-full">
+                        <span class="sr-only">Rechercher</span>
+                        🔍
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Left Content -->
+                <div class="space-y-8">
+                    <h3 class="text-4xl font-bold font-poppins">
+                        Notre <span class="text-congo-lime">bibliothèque</span> numérique
+                    </h3>
+                    <p class="text-2xl font-light text-congo-dark">
+                        Accédez à des milliers de ressources éducatives adaptées à tous les niveaux, du primaire à l'université. Nos contenus sont régulièrement mis à jour pour rester pertinents.
+                    </p>
+                    
+                    <ul class="space-y-6">
+                        <li class="flex items-center">
+                            <div class="w-6 h-6 bg-congo-lime rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white text-sm">✓</span>
+                            </div>
+                            <span class="text-xl font-light text-congo-dark">Plus de 5000 livres et documents</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-6 h-6 bg-congo-lime rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white text-sm">✓</span>
+                            </div>
+                            <span class="text-xl font-light text-congo-dark">Le Pleurer-Rire Disponible</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-6 h-6 bg-congo-lime rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white text-sm">✓</span>
+                            </div>
+                            <span class="text-xl font-light text-congo-dark">BAC - BEPC - Memoire Passés</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-6 h-6 bg-congo-lime rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white text-sm">✓</span>
+                            </div>
+                            <span class="text-xl font-light text-congo-dark">Exposés et résumés</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="bg-gradient-to-r from-congo-lime to-congo-green text-white px-6 py-3 rounded-2xl font-bold hover:shadow-lg transition-shadow">
+                        Explorer la bibliothèque
+                    </button>
+                </div>
+
+                <!-- Right Content - Subject Cards -->
+                <div class="bg-gray-100 rounded-xl p-6">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="w-full h-32 bg-congo-dark/10 rounded-md mb-4 flex items-center justify-center">
+                                <span class="text-congo-dark text-2xl">📊</span>
+                            </div>
+                            <h4 class="font-medium font-poppins text-gray-900 mb-1">Mathématiques</h4>
+                            <p class="text-sm text-congo-dark font-roboto mb-3">Niveau secondaire</p>
+                            <span class="bg-congo-lime/20 text-congo-dark text-xs px-3 py-1 rounded-full">120 leçons</span>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="w-full h-32 bg-congo-dark/10 rounded-md mb-4 flex items-center justify-center">
+                                <span class="text-congo-dark text-2xl">🔬</span>
+                            </div>
+                            <h4 class="font-medium font-poppins text-gray-900 mb-1">Sciences</h4>
+                            <p class="text-sm text-congo-dark font-roboto mb-3">Niveau secondaire</p>
+                            <span class="bg-congo-lime/20 text-congo-dark text-xs px-3 py-1 rounded-full">85 leçons</span>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="w-full h-32 bg-congo-dark/10 rounded-md mb-4 flex items-center justify-center">
+                                <span class="text-congo-dark text-2xl">📚</span>
+                            </div>
+                            <h4 class="font-medium font-poppins text-gray-900 mb-1">Français</h4>
+                            <p class="text-sm text-congo-dark font-roboto mb-3">Tous niveaux</p>
+                            <span class="bg-congo-lime/20 text-congo-dark text-xs px-3 py-1 rounded-full">200 leçons</span>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="w-full h-32 bg-congo-dark/10 rounded-md mb-4 flex items-center justify-center">
+                                <span class="text-congo-dark text-2xl">🌍</span>
+                            </div>
+                            <h4 class="font-medium font-poppins text-gray-900 mb-1">Histoire-Géo</h4>
+                            <p class="text-sm text-congo-dark font-roboto mb-3">Niveau primaire</p>
+                            <span class="bg-congo-lime/20 text-congo-dark text-xs px-3 py-1 rounded-full">75 leçons</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold font-poppins mb-4">
+                    Nos <span class="text-congo-lime">Services</span>, Pourquoi choisir <span class="text-congo-lime">CongoLibs</span> ?
+                </h2>
+                <p class="text-2xl font-light text-congo-dark">
+                    Notre plateforme offre des solutions adaptées aux besoins éducatifs congolais, avec une approche moderne et accessible.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Service Cards -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-congo-bright/20 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-congo-bright text-2xl">📍</span>
+                    </div>
+                    <h3 class="text-xl font-normal font-poppins text-gray-900 mb-4">Ressources localisées</h3>
+                    <p class="text-gray-600">
+                        Contenus adaptés au programme scolaire congolais, conçus pour répondre aux besoins spécifiques des étudiants.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-congo-bright/20 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-congo-bright text-2xl">🤖</span>
+                    </div>
+                    <h3 class="text-xl font-normal font-poppins text-gray-900 mb-4">Outils IA</h3>
+                    <p class="text-gray-600">
+                        Outils intelligents pour aider élèves et enseignants à optimiser l'apprentissage et l'enseignement.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-congo-bright/20 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-congo-bright text-2xl">🎯</span>
+                    </div>
+                    <h3 class="text-xl font-normal font-poppins text-gray-900 mb-4">Concours & Examens</h3>
+                    <p class="text-gray-600">
+                        Informations, conseils, calendriers et préparation pour tous les concours et examens nationaux.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-congo-bright/20 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-congo-bright text-2xl">🎓</span>
+                    </div>
+                    <h3 class="text-xl font-normal font-poppins text-gray-900 mb-4">Orientation & Séries</h3>
+                    <p class="text-gray-600">
+                        Arrêtez de vous demander quelle série choisir... Découvrez les parcours adaptés pour devenir informaticien, douanier, médecin, etc.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-congo-bright/20 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-congo-bright text-2xl">🏫</span>
+                    </div>
+                    <h3 class="text-xl font-normal font-poppins text-gray-900 mb-4">Universités & Écoles</h3>
+                    <p class="text-gray-600">
+                        Pas seulement une université, mais la meilleure pour vous. Actualités et informations centralisées sur les établissements.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="w-16 h-16 bg-congo-bright/20 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-congo-bright text-2xl">👨‍🏫</span>
+                    </div>
+                    <h3 class="text-xl font-normal font-poppins text-gray-900 mb-4">Allô Prof</h3>
+                    <p class="text-gray-600">
+                        Besoin d'un encadrement ? Souscrivez et trouvez votre prof particulier adapté à vos besoins spécifiques.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button class="bg-gray-900 text-white px-8 py-4 rounded-full font-normal text-lg hover:bg-gray-800 transition-colors">
+                    Explorer les services →
+                </button>
+            </div>
+        </div> 
+    </section>
+
+    <!-- Learning Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left - Course Card -->
+                <div class="relative">
+                    <div class="bg-white rounded-3xl shadow-2xl overflow-hidden max-w-md">
+                        <div class="relative">
+                            <img src="https://placehold.co/400x200" alt="Algèbre Fondamentale" class="w-full h-48 object-cover">
+                            <div class="absolute top-4 right-4 bg-blue-600 text-white text-sm px-3 py-1 rounded-full">
+                                15 min
+                            </div>
+                            <div class="absolute inset-0 bg-black/10 flex items-center justify-center">
+                                <button class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                                    <span class="text-congo-bright text-2xl">▶</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <span class="text-blue-600 text-sm">📊</span>
+                                </div>
+                                <span class="ml-3 text-blue-600 font-medium">Mathématiques</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Algèbre Fondamentale</h3>
+                            <p class="text-gray-600 text-sm mb-4">
+                                Apprenez les bases de l'algèbre avec des exemples pratiques et des exercices interactifs.
+                            </p>
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/32x32" alt="Prof Martin" class="w-8 h-8 rounded-full">
+                                <span class="ml-2 text-gray-700 font-medium text-sm">Prof. Martin</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <p class="text-xl font-medium text-black">15 vidéos disponibles</p>
+                        <p class="text-xl font-light text-gray-500">Dernière mise à jour: 12/06/2023</p>
+                    </div>
+                </div>
+
+                <!-- Right - Content -->
+                <div class="space-y-8">
+                    <h2 class="text-4xl font-bold font-poppins text-right">
+                        Apprendre <span class="text-congo-lime">avec</span> Congolibs, les trucs et astuces pour réussir
+                    </h2>
+                    <p class="text-2xl font-light text-congo-dark text-right">
+                        Accédez à nos ressources éducatives pour améliorer vos connaissances et vous préparer aux examens.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-end">
+                            <span class="text-xl font-light text-congo-dark mr-4">Vidéos explicatives et tutoriels</span>
+                            <div class="w-6 h-6 bg-congo-lime rounded-full flex items-center justify-center">
+                                <span class="text-white text-sm">✓</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-end">
+                            <span class="text-xl font-light text-congo-dark mr-4">Exercices interactifs et quiz</span>
+                            <div class="w-6 h-6 bg-congo-lime rounded-full flex items-center justify-center">
+                                <span class="text-white text-sm">✓</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-end">
+                            <span class="text-xl font-light text-congo-dark mr-4">Blog et Actualité</span>
+                            <div class="w-6 h-6 bg-congo-lime rounded-full flex items-center justify-center">
+                                <span class="text-white text-sm">✓</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-right">
+                        <button class="bg-gradient-to-r from-congo-green to-congo-lime text-white px-8 py-3 rounded-2xl font-medium text-lg hover:shadow-lg transition-shadow">
+                            Commencer ma révision
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comments Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold font-poppins mb-4">
+                    <span class="text-congo-lime">Vous</span> êtes, <span class="text-congo-lime">nous</span> sommes. Ce que nos utilisateurs <span class="text-congo-lime">pensent</span>.
+                </h2>
+                <p class="text-2xl font-light text-congo-dark">
+                    commentez, suggérez et inspirer. Nous sommes à votre écoute.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Comments -->
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-r from-gray-50 via-teal-50 to-emerald-50 rounded-xl border-l-4 border-congo-bright p-6">
+                        <div class="flex items-start space-x-4 mb-4">
+                            <div class="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold">M</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Marie Dubois</h4>
+                                        <p class="text-gray-500 text-xs">Il y a 2 heures</p>
+                                    </div>
+                                    <div class="flex items-center text-emerald-500">
+                                        <span class="text-sm">👍</span>
+                                        <span class="text-xs ml-1">12</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700">
+                            Excellente initiative ! J'adore la simplicité de cette interface. Le design est vraiment moderne et agréable à utiliser.
+                        </p>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-gray-50 via-teal-50 to-emerald-50 rounded-xl border-l-4 border-congo-bright p-6">
+                        <div class="flex items-start space-x-4 mb-4">
+                            <div class="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold">J</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Jean Martin</h4>
+                                        <p class="text-gray-500 text-xs">Il y a 5 heures</p>
+                                    </div>
+                                    <div class="flex items-center text-emerald-500">
+                                        <span class="text-sm">👍</span>
+                                        <span class="text-xs ml-1">8</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700">
+                            Très bonne expérience utilisateur. La couleur verte apporte vraiment une sensation de fraîcheur et d'énergie positive.
+                        </p>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-gray-50 via-teal-50 to-emerald-50 rounded-xl border-l-4 border-congo-bright p-6">
+                        <div class="flex items-start space-x-4 mb-4">
+                            <div class="w-10 h-10 bg-emerald-700 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold">S</span>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Sophie Laurent</h4>
+                                        <p class="text-gray-500 text-xs">Il y a 1 jour</p>
+                                    </div>
+                                    <div class="flex items-center text-emerald-500">
+                                        <span class="text-sm">👍</span>
+                                        <span class="text-xs ml-1">15</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-700">
+                            Interface intuitive et responsive. Parfait pour encourager l'interaction et les échanges constructifs.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Add Comment Form -->
+                <div class="bg-gradient-to-r from-gray-50 via-teal-50 to-emerald-50 rounded-xl shadow-lg p-6">
+                    <div class="flex items-center mb-6">
+                        <div class="w-5 h-5 text-congo-bright mr-3">💬</div>
+                        <h3 class="text-xl font-bold text-gray-800">Ajouter un commentaire</h3>
+                    </div>
+                    
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 text-sm font-medium font-poppins mb-2">Nom</label>
+                            <input type="text" placeholder="Votre nom..." class="w-full px-4 py-3 bg-white rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-congo-bright">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 text-sm font-medium font-poppins mb-2">Commentaire</label>
+                            <textarea placeholder="Écrivez votre commentaire ici..." rows="4" class="w-full px-4 py-3 bg-white rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-congo-bright resize-none"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="bg-gradient-to-r from-congo-green to-congo-lime text-white px-6 py-2 rounded-lg font-medium hover:shadow-lg transition-shadow">
+                            Publier
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold font-poppins text-white">Congolibs</h3>
+                    <p class="text-gray-300">
+                        La plateforme éducative congolaise qui rend l'apprentissage accessible à tous.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">📱</a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">📧</a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">🐦</a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">📘</a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-medium font-poppins text-white">Liens rapides</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Apprendre</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Librairie</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Communauté</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Abonnement</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-medium font-poppins text-white">Support</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Licence</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">A propos</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Conditions d'utilisation</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-medium font-poppins text-white">Contactez-nous</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <span class="text-white mr-2">✉️</span>
+                            <span class="text-gray-300">contact@congolibs.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-white mr-2">📞</span>
+                            <span class="text-gray-300">+242 06 775 6084</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-white mr-2">📍</span>
+                            <span class="text-gray-300">Brazzaville, République du Congo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 pt-8">
+                <p class="text-center text-gray-400">
+                    © 2023 Congolibs. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        // Mobile menu functionality can be added here if needed
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // Form submission handling
+            const commentForm = document.querySelector('form');
+            if (commentForm) {
+                commentForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // Add form submission logic here
+                    alert('Commentaire envoyé ! Merci pour votre retour.');
+                });
+            }
         });
-</script>
+    </script>
 </body>
 </html>
