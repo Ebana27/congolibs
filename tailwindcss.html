@@ -68,7 +68,27 @@
       btn.addEventListener('click', () => {
          alert("Vous allez être rediriger vers une autre page");
       })
-      
+  // Sélecteurs
+  const openBtn = document.querySelector('button[data-modal-open]');
+  const modal = document.getElementById('modal-box');
+  const closeBtn = document.getElementById('modal-close');
+
+  // Ouvre la modale
+  openBtn.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+  });
+
+  // Ferme la modale
+  closeBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
+
+  // Fermer en cliquant hors de la boîte
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+    }
+  });
    </script>
 </body>
 </html>
