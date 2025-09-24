@@ -1,176 +1,348 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <title>Page d'inscription</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
+  <style type="text/tailwindcss">
+    @layer base {
+      :root {
+        --color-congo-green: #57F52F;
+        --color-congo-dark: #064025;
+        --color-congo-medium: #1E8B31;
+        --color-congo-bright: #26AD39;
+        --color-congo-lime: #1DDA59;
+        --font-poppins: "Poppins", sans-serif;
+        --font-roboto: "Roboto", sans-serif;
+      }
+      html { font-family: var(--font-roboto); background-color: #F9F9F9; color: #333333; }
+      h1, h2, h3, h4, h5, h6 { font-family: var(--font-poppins); color: var(--color-congo-dark);}
+      a { color: var(--color-congo-green); text-decoration: none; }
+      a:hover { color: var(--color-congo-lime);}
+      body::before {
+        content: "";
+        position: fixed;
+        z-index: 0;
+        inset: 0;
+        background: rgba(255,255,255,0.2);
+        pointer-events: none;
+      }
+    }
+    @layer utilities {
+      .bg-congo-green { background-color: var(--color-congo-green); }
+      .bg-congo-dark { background-color: var(--color-congo-dark); }
+      .bg-congo-medium { background-color: var(--color-congo-medium); }
+      .bg-congo-bright { background-color: var(--color-congo-bright); }
+      .bg-congo-lime { background-color: var(--color-congo-lime); }
+      .text-congo-green { color: var(--color-congo-green); }
+      .text-congo-dark { color: var(--color-congo-dark); }
+      .text-congo-medium { color: var(--color-congo-medium); }
+      .text-congo-bright { color: var(--color-congo-bright); }
+      .text-congo-lime { color: var(--color-congo-lime); }
+      .font-poppins { font-family: var(--font-poppins); }
+      .font-roboto { font-family: var(--font-roboto); }
+    }
+    /* TIMER SOFT FADE/SLIDE */
+    .timer-group { display:flex; gap:0.7rem; }
+    .timer-unit {
+      min-width: 54px;
+      min-height: 70px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px;
     }
-
-    h1 { color: #333; }
-
-    #timer {
-      font-size: 48px;
-      margin: 20px 0;
-      color: #222;
-    }
-
-    form {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      max-width: 400px;
-      width: 100%;
-    }
-
-    form label { display: block; margin-top: 10px; }
-    form input, form select {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-
-    form button {
-      margin-top: 15px;
-      padding: 10px;
-      width: 100%;
-      background: #28a745;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    form button:hover { background: #218838; }
-
-    .social-links {
-      margin-top: 20px;
+    .timer-digit {
       display: flex;
-      gap: 20px;
+      align-items: baseline;
+      font-family: var(--font-poppins);
+      font-weight: bold;
+      font-size: 2.2rem;
+      color: var(--color-congo-dark);
+      background: #fff;
+      border-radius: 0.7rem;
+      box-shadow: 0 4px 14px rgba(39,233,84,0.09);
+      border: 2px solid var(--color-congo-green);
+      width: 54px;
+      height: 64px;
+      justify-content: center;
+      margin-bottom: 0.05rem;
+      position: relative;
+      transition: color 0.15s;
     }
-
-    .social-links a {
-      text-decoration: none;
-      font-size: 20px;
-      color: white;
-      padding: 10px;
-      border-radius: 5px;
+    .timer-digit.text-congo-green { color: var(--color-congo-green);}
+    .timer-digit.text-congo-lime { color: var(--color-congo-lime);}
+    .timer-digit.text-congo-bright { color: var(--color-congo-bright);}
+    .timer-digit.text-congo-dark { color: var(--color-congo-dark);}
+    .timer-digit.fade-anim {
+      animation: timerFadeUp 0.36s cubic-bezier(.77,1.7,.52,1.01);
     }
-
-    .facebook { background: #3b5998; }
-    .whatsapp { background: #25d366; }
-    .tiktok { background: #000; }
+    @keyframes timerFadeUp {
+      0% { opacity: 0; transform: translateY(18px);}
+      70% { opacity: .8; }
+      100% { opacity: 1; transform: translateY(0);}
+    }
+    .timer-label {
+      font-size: 0.82rem;
+      font-family: var(--font-roboto);
+      color: var(--color-congo-green);
+      margin-top: 2px;
+      letter-spacing: 0.04em;
+      font-weight: 500;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    @media (max-width: 500px) {
+      .timer-unit { min-width: 38px;}
+      .timer-digit { width:38px; height:44px; font-size:1.3rem;}
+    }
+    @media (min-width: 420px) { .xs\:flex-row { flex-direction: row; } .xs\:w-auto { width:auto; } }
+    @media (max-width: 420px) { .xs\:flex-row { flex-direction: column; } .xs\:w-auto { width: 100%; } }
   </style>
 </head>
-<body>
+<body class="relative min-h-screen bg-school-grid bg-[length:44px_44px]">
+  <!-- IMMERSED SCHOOL ELEMENTS -->
+  <div aria-hidden="true" class="pointer-events-none fixed inset-0 z-0">
+    <img src="https://cdn.pixabay.com/photo/2016/03/31/20/11/blackboard-1299832_1280.png"
+         class="absolute top-0 left-0 w-28 opacity-10" alt="" />
+    <img src="https://cdn.pixabay.com/photo/2013/07/12/16/51/pencil-151938_1280.png"
+         class="absolute bottom-10 right-10 w-16 opacity-20 animate-[float_7s_ease-in-out_infinite]" alt="" />
+    <img src="https://cdn.pixabay.com/photo/2014/04/03/00/42/books-310012_1280.png"
+         class="absolute bottom-2 left-1/4 w-24 opacity-15 animate-[float_10s_ease-in-out_infinite]" alt="" />
+    <style>
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-14px) rotate(-2deg); }
+      }
+      input, select {
+        border: 2px solid #064025 !important;
+      }
+    </style>
+  </div>
+  <div id="success-msg" class="hidden fixed bottom-4 right-4 bg-congo-green text-white px-4 py-2 rounded shadow-lg font-poppins z-50 transition-all animate-fade-in">
+    Inscription réussie 🎉
+  </div>
+  <div id="error-msg" class="hidden fixed bottom-4 right-4 bg-red-600 text-white px-4 py-2 rounded shadow-lg font-poppins z-50 transition-all animate-fade-in">
+    Erreur lors de l'inscription, veuillez réessayer.
+  </div>
+  <main class="relative z-10 flex flex-col items-center min-h-screen justify-center py-8 px-2 sm:px-6 lg:px-8">
+    <!-- Logo typographique -->
+    <div class="w-full flex justify-center mt-4 mb-2" id="logo-animate">
+      <span class="font-poppins text-congo-green text-3xl sm:text-4xl tracking-wide font-bold select-none drop-shadow-congo">
+        congolibs
+      </span>
+    </div>
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold font-poppins text-congo-dark drop-shadow-congo mb-2 mt-2 text-center" id="title-animate">
+      Inscrivez-vous à la rentrée scolaire 2025 !
+    </h1>
+    <p class="text-base sm:text-lg md:text-xl font-roboto text-congo-medium mb-6 text-center max-w-2xl" id="desc-animate">
+      Rejoignez la communauté des élèves passionnés. Le compte à rebours vers la rentrée a commencé !
+    </p>
+    <!-- TIMER SIMPLE -->
+    <div id="timer" class="timer-group mb-8 bg-white/90 rounded-xl px-2 sm:px-8 py-4 shadow-lg border-2 border-congo-green w-fit mx-auto transition-all select-none" style="min-width:270px"></div>
+    <!-- Signup Card -->
+    <form id="signup-form"
+      class="bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-congo-green/20 max-w-lg w-full px-4 sm:px-8 py-6 sm:py-8 flex flex-col gap-4 animate-fade-in" id="form-animate">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-congo-dark font-semibold mb-1 font-poppins" for="nom">Nom</label>
+          <input type="text" name="nom" id="nom" required
+            class="w-full rounded-lg focus:ring-2 focus:ring-congo-green/60 font-roboto px-4 py-2 text-base outline-none transition bg-transparent" />
+        </div>
+        <div>
+          <label class="block text-congo-dark font-semibold mb-1 font-poppins" for="prenom">Prénom</label>
+          <input type="text" name="prenom" id="prenom" required
+            class="w-full rounded-lg focus:ring-2 focus:ring-congo-green/60 font-roboto px-4 py-2 text-base outline-none transition bg-transparent" />
+        </div>
+      </div>
+      <div>
+        <label class="block text-congo-dark font-semibold mb-1 font-poppins" for="telephone">Numéro de téléphone</label>
+        <input type="tel" name="telephone" id="telephone" required
+          class="w-full rounded-lg focus:ring-2 focus:ring-congo-green/60 font-roboto px-4 py-2 text-base outline-none transition bg-transparent" />
+      </div>
+      <div>
+        <label class="block text-congo-dark font-semibold mb-1 font-poppins" for="email">Adresse e-mail</label>
+        <input type="email" name="email" id="email" required
+          class="w-full rounded-lg focus:ring-2 focus:ring-congo-green/60 font-roboto px-4 py-2 text-base outline-none transition bg-transparent" />
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-congo-dark font-semibold mb-1 font-poppins" for="classe">Classe</label>
+          <input type="text" name="classe" id="classe" required
+            class="w-full rounded-lg focus:ring-2 focus:ring-congo-green/60 font-roboto px-4 py-2 text-base outline-none transition bg-transparent" />
+        </div>
+        <div>
+          <label class="block text-congo-dark font-semibold mb-1 font-poppins" for="ecole">École</label>
+          <input type="text" name="ecole" id="ecole" required
+            class="w-full rounded-lg focus:ring-2 focus:ring-congo-green/60 font-roboto px-4 py-2 text-base outline-none transition bg-transparent" />
+        </div>
+      </div>
+      <div>
+        <label class="block text-congo-dark font-semibold mb-1 font-poppins" for="region">Région</label>
+        <select name="region" id="region" required
+          class="w-full rounded-lg focus:ring-2 focus:ring-congo-green/60 font-roboto px-4 py-2 text-base outline-none transition bg-transparent">
+          <option value="">Sélectionnez votre région</option>
+          <option value="Brazzaville">Brazzaville</option>
+          <option value="Oyo">Oyo</option>
+          <option value="Dolisie">Dolisie</option>
+          <option value="Pointe-Noire">Pointe-Noire</option>
+          <option value="Autres">Autres</option>
+        </select>
+      </div>
+      <button type="submit"
+        class="bg-gradient-to-r from-congo-green to-congo-lime text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition-shadow mt-2 font-poppins text-lg shadow-congo">
+        S’inscrire
+      </button>
+    </form>
+    <!-- Social Links Responsive -->
+    <div class="flex flex-col xs:flex-row gap-4 sm:gap-6 mt-8 items-center justify-center w-full" id="social-animate">
+      <a href="https://facebook.com" target="_blank"
+         class="flex items-center gap-2 text-white bg-congo-medium hover:bg-congo-dark px-5 py-2 rounded-lg shadow transition-transform hover:scale-105 font-semibold font-roboto w-full xs:w-auto justify-center">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.596 0 0 .594 0 1.326V22.67c0 .73.595 1.324 1.326 1.324h11.495V14.7h-3.13v-3.62h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.098 2.794.142v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.764v2.313h3.587l-.467 3.62h-3.12V24h6.116c.73 0 1.325-.594 1.325-1.326V1.326C24 .594 23.405 0 22.675 0"></path></svg>
+        Facebook
+      </a>
+      <a href="https://wa.me/" target="_blank"
+         class="flex items-center gap-2 text-white bg-congo-green hover:bg-congo-lime px-5 py-2 rounded-lg shadow transition-transform hover:scale-105 font-semibold font-roboto w-full xs:w-auto justify-center">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 32 32"><path d="M16 .667C7.641.667.667 7.641.667 16c0 2.823.747 5.574 2.18 7.992L.049 31.951a.667.667 0 0 0 .617.617l7.959-2.798A15.252 15.252 0 0 0 16 31.334C24.359 31.334 31.333 24.36 31.333 16S24.359.667 16 .667zm0 28.001c-2.619 0-5.178-.734-7.362-2.124l-.527-.329-4.727 1.662 1.629-4.693-.343-.54C3.069 20.607 2.334 18.332 2.334 16c0-7.513 6.153-13.667 13.666-13.667S29.666 8.487 29.666 16 23.513 28.668 16 28.668zm7.325-8.592c-.403-.202-2.387-1.18-2.756-1.314-.37-.135-.64-.202-.911.203-.27.404-1.044 1.314-1.28 1.585-.235.27-.47.304-.873.102-.402-.203-1.698-.626-3.236-1.996-1.197-1.07-2.005-2.386-2.24-2.79-.235-.404-.025-.621.177-.823.182-.181.403-.47.604-.705.201-.236.268-.404.403-.673.134-.27.067-.505-.034-.706-.102-.202-.911-2.197-1.248-3.006-.33-.792-.667-.683-.911-.695-.235-.012-.505-.015-.776-.015-.27 0-.707.101-1.078.505-.37.404-1.415 1.383-1.415 3.37 0 1.988 1.448 3.906 1.651 4.18.202.27 2.803 4.288 6.761 5.846.946.33 1.683.527 2.26.672.949.242 1.813.208 2.498.127.762-.09 2.387-.977 2.724-1.921.336-.943.336-1.75.236-1.922-.101-.171-.37-.27-.772-.473z"/></svg>
+        WhatsApp
+      </a>
+      <a href="https://www.tiktok.com" target="_blank"
+         class="flex items-center gap-2 text-white bg-black hover:bg-congo-dark px-5 py-2 rounded-lg shadow transition-transform hover:scale-105 font-semibold font-roboto w-full xs:w-auto justify-center">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 32 32"><path d="M29.656 10.688a8.081 8.081 0 0 1-5.312-2.063V21.25a7.75 7.75 0 1 1-7.75-7.75c.25 0 .5.016.75.037v4.364a3.387 3.387 0 1 0 2.25 3.184V2.438h4.375a4.687 4.687 0 0 0 4.687 4.687v3.563z"/></svg>
+        TikTok
+      </a>
+    </div>
+  </main>
+  <script>
+    // --- TIMER SIMPLE --- //
+    function timerUnitHTML(type, val, label, colorClass) {
+      return `
+      <div class="timer-unit">
+        <span class="timer-digit ${colorClass}" id="timer-${type}">${val}</span>
+        <span class="timer-label">${label}</span>
+      </div>`;
+    }
+    let lastTime = {d:"00",h:"00",m:"00",s:"00"};
+    function startCountdownSimple(endDate) {
+      const timer = document.getElementById('timer');
+      function renderFirst() {
+        timer.innerHTML =
+          timerUnitHTML("d", lastTime.d, "Jours", "text-congo-dark") +
+          timerUnitHTML("h", lastTime.h, "Heures", "text-congo-green") +
+          timerUnitHTML("m", lastTime.m, "Minutes", "text-congo-lime") +
+          timerUnitHTML("s", lastTime.s, "Secondes", "text-congo-bright");
+      }
+      function animChange(id, val) {
+        const el = document.getElementById('timer-'+id);
+        if (!el) return;
+        el.textContent = val;
+        el.classList.remove('fade-anim');
+        void el.offsetWidth; // force reflow
+        el.classList.add('fade-anim');
+        setTimeout(()=>el.classList.remove('fade-anim'), 350);
+      }
+      function updateTimer() {
+        const now = new Date().getTime();
+        const dist = endDate - now;
+        if (dist < 0) {
+          timer.innerHTML = "<span class='text-congo-green font-poppins'>Événement commencé !</span>";
+          clearInterval(timerInterval);
+          return;
+        }
+        const d = String(Math.floor(dist / (1000 * 60 * 60 * 24))).padStart(2,'0');
+        const h = String(Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2,'0');
+        const m = String(Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60))).padStart(2,'0');
+        const s = String(Math.floor((dist % (1000 * 60)) / 1000)).padStart(2,'0');
+        if (d !== lastTime.d) animChange("d", d);
+        if (h !== lastTime.h) animChange("h", h);
+        if (m !== lastTime.m) animChange("m", m);
+        if (s !== lastTime.s) animChange("s", s);
+        lastTime = {d,h,m,s};
+      }
+      renderFirst();
+      updateTimer();
+      var timerInterval = setInterval(updateTimer, 1000);
+    }
+    const targetDate = new Date("October 1, 2025 00:00:00").getTime();
+    startCountdownSimple(targetDate);
 
-<h1>Inscrivez-vous maintenant</h1>
+    // FORM PRE-FILL & LOCALSTORAGE
+    document.addEventListener("DOMContentLoaded", () => {
+      ['nom','prenom','telephone','email','classe','ecole','region'].forEach(key => {
+        const field = document.querySelector(`[name=${key}]`);
+        if (field && localStorage.getItem('form_'+key)) field.value = localStorage.getItem('form_'+key);
+      });
+      document.getElementById("signup-form").addEventListener("input", (e) => {
+        if(e.target.name) localStorage.setItem('form_'+e.target.name, e.target.value);
+      });
+    });
 
-<div id="timer">00:00:00:00</div>
-
-<form id="signup-form">
-  <label>Nom :</label>
-  <input type="text" name="nom" required>
-
-  <label>Prénom :</label>
-  <input type="text" name="prenom" required>
-
-  <label>Numéro de téléphone :</label>
-  <input type="tel" name="telephone" required>
-
-  <label>Adresse e-mail :</label>
-  <input type="email" name="email" required>
-
-  <label>Classe :</label>
-  <input type="text" name="classe" required>
-
-  <label>École :</label>
-  <input type="text" name="ecole" required>
-
-  <label>Région :</label>
-  <select name="region" required>
-    <option value="">Sélectionnez votre région</option>
-    <option value="Brazzaville">Brazzaville</option>
-    <option value="Oyo">Oyo</option>
-    <option value="Dolisie">Dolisie</option>
-    <option value="Pointe-Noire">Pointe-Noire</option>
-    <option value="Autres">Autres</option>
-  </select>
-
-  <button type="submit">S’inscrire</button>
-</form>
-
-<div class="social-links">
-  <a href="https://facebook.com" target="_blank" class="facebook">Facebook</a>
-  <a href="https://wa.me/" target="_blank" class="whatsapp">WhatsApp</a>
-  <a href="https://www.tiktok.com" target="_blank" class="tiktok">TikTok</a>
-</div>
-
-<script>
-  // TIMER jusqu'au 1er octobre
-  function startCountdown(endDate) {
-    const timerElement = document.getElementById('timer');
-
-    function updateTimer() {
-      const now = new Date().getTime();
-      const distance = endDate - now;
-
-      if (distance < 0) {
-        timerElement.innerHTML = "Événement commencé !";
-        clearInterval(timerInterval);
+    document.getElementById("signup-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const data = {
+        nom: e.target.nom.value.trim(),
+        prenom: e.target.prenom.value.trim(),
+        telephone: e.target.telephone.value.trim(),
+        email: e.target.email.value.trim(),
+        classe: e.target.classe.value.trim(),
+        ecole: e.target.ecole.value.trim(),
+        region: e.target.region.value.trim()
+      };
+      if (!data.nom || !data.prenom || !data.email || !data.telephone) {
+        showError("Veuillez remplir tous les champs obligatoires.");
         return;
       }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      timerElement.innerHTML = `${days}j ${hours}h ${minutes}m ${seconds}s`;
-    }
-
-    updateTimer();
-    const timerInterval = setInterval(updateTimer, 1000);
-  }
-
-  const targetDate = new Date("October 1, 2025 00:00:00").getTime();
-  startCountdown(targetDate);
-
-  // FORMULAIRE avec Zapier
-  document.getElementById("signup-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const data = {
-      nom: e.target.nom.value,
-      prenom: e.target.prenom.value,
-      telephone: e.target.telephone.value,
-      email: e.target.email.value,
-      classe: e.target.classe.value,
-      ecole: e.target.ecole.value,
-      region: e.target.region.value
-    };
-
-    fetch("https://hooks.zapier.com/hooks/catch/TON_ZAPIER_WEBHOOK/", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    }).then(res => {
-      alert("Inscription enregistrée !");
-      e.target.reset();
+      fetch("https://hooks.zapier.com/hooks/catch/TON_ZAPIER_WEBHOOK/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      }).then(res => {
+        if (res.ok) {
+          showSuccess();
+          e.target.reset();
+          ['nom','prenom','telephone','email','classe','ecole','region'].forEach(k=>localStorage.removeItem('form_'+k));
+        } else {
+          showError("Erreur lors de l'inscription, veuillez réessayer.");
+        }
+      }).catch(() => showError("Impossible de se connecter au serveur."));
     });
-  });
-</script>
-
+    function showSuccess() {
+      const msg = document.getElementById("success-msg");
+      msg.classList.remove("hidden");
+      setTimeout(() => { msg.classList.add("hidden"); }, 3000);
+    }
+    function showError(text) {
+      const msg = document.getElementById("error-msg");
+      msg.textContent = text;
+      msg.classList.remove("hidden");
+      setTimeout(() => { msg.classList.add("hidden"); }, 4000);
+    }
+    // --- ANIME.JS SCROLL ANIMATION ---
+    function animateOnScroll(selector, animeOpts) {
+      const el = document.querySelector(selector);
+      if (!el) return;
+      let animated = false;
+      function check() {
+        const rect = el.getBoundingClientRect();
+        if (!animated && rect.top < window.innerHeight - 50) {
+          anime({targets: el, ...animeOpts});
+          animated = true;
+        }
+      }
+      window.addEventListener('scroll', check, {passive:true});
+      setTimeout(check,200);
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+      anime({ targets: "#logo-animate", translateY: [-40,0], opacity:[0,1], duration:900, easing:"easeOutExpo" });
+      animateOnScroll("#title-animate", {translateY:[60,0], opacity:[0,1], duration:900, delay:200, easing:"easeOutExpo"});
+      animateOnScroll("#desc-animate", {translateY:[40,0], opacity:[0,1], duration:900, delay:350, easing:"easeOutExpo"});
+      animateOnScroll("#timer", {scale:[0.8,1], opacity:[0,1], duration:800, delay:400, easing:"easeOutBack"});
+      animateOnScroll("#form-animate", {translateY:[100,0], opacity:[0,1], duration:950, delay:500, easing:"easeOutExpo"});
+      animateOnScroll("#social-animate", {translateY:[40,0], opacity:[0,1], duration:800, delay:650, easing:"easeOutExpo"});
+    });
+  </script>
 </body>
 </html>
