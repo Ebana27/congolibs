@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Page d'inscription</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    h1 { color: #333; }
+
+    #timer {
+      font-size: 48px;
+      margin: 20px 0;
+      color: #222;
+    }
+
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    form label { display: block; margin-top: 10px; }
+    form input, form select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    form button {
+      margin-top: 15px;
+      padding: 10px;
+      width: 100%;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    form button:hover { background: #218838; }
+
+    .social-links {
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .social-links a {
+      text-decoration: none;
+      font-size: 20px;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .facebook { background: #3b5998; }
+    .whatsapp { background: #25d366; }
+    .tiktok { background: #000; }
+  </style>
+</head>
+<body>
+
+<h1>Inscrivez-vous maintenant</h1>
+
+<div id="timer">00:00:00:00</div>
+
+<form id="signup-form">
+  <label>Nom :</label>
+  <input type="text" name="nom" required>
+
+  <label>Prénom :</label>
+  <input type="text" name="prenom" required>
+
+  <label>Numéro de téléphone :</label>
+  <input type="tel" name="telephone" required>
+
+  <label>Adresse e-mail :</label>
+  <input type="email" name="email" required>
+
+  <label>Classe :</label>
+  <input type="text" name="classe" required>
+
+  <label>École :</label>
+  <input type="text" name="ecole" required>
+
+  <label>Région :</label>
+  <select name="region" required>
+    <option value="">Sélectionnez votre région</option>
+    <option value="Brazzaville">Brazzaville</option>
+    <option value="Oyo">Oyo</option>
+    <option value="Dolisie">Dolisie</option>
+    <option value="Pointe-Noire">Pointe-Noire</option>
+    <option value="Autres">Autres</option>
+  </select>
+
+  <button type="submit">S’inscrire</button>
+</form>
+
+<div class="social-links">
+  <a href="https://facebook.com" target="_blank" class="facebook">Facebook</a>
+  <a href="https://wa.me/" target="_blank" class="whatsapp">WhatsApp</a>
+  <a href="https://www.tiktok.com" target="_blank" class="tiktok">TikTok</a>
+</div>
+
+<script>
+  // TIMER jusqu'au 1er octobre
+  function startCountdown(endDate) {
+    const timerElement = document.getElementById('timer');
+
+    function updateTimer() {
+      const now = new Date().getTime();
+      const distance = endDate - now;
+
+      if (distance < 0) {
+        timerElement.innerHTML = "Événement commencé !";
+        clearInterval(timerInterval);
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      timerElement.innerHTML = `${days}j ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    updateTimer();
+    const timerInterval = setInterval(updateTimer, 1000);
+  }
+
+  const targetDate = new Date("October 1, 2025 00:00:00").getTime();
+  startCountdown(targetDate);
+
+  // FORMULAIRE avec Zapier
+  document.getElementById("signup-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const data = {
+      nom: e.target.nom.value,
+      prenom: e.target.prenom.value,
+      telephone: e.target.telephone.value,
+      email: e.target.email.value,
+      classe: e.target.classe.value,
+      ecole: e.target.ecole.value,
+      region: e.target.region.value
+    };
+
+    fetch("https://hooks.zapier.com/hooks/catch/TON_ZAPIER_WEBHOOK/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    }).then(res => {
+      alert("Inscription enregistrée !");
+      e.target.reset();
+    });
+  });
+</script>
+
+</body>
+</html>
