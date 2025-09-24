@@ -339,7 +339,7 @@ document.getElementById("signup-form").addEventListener("submit", async function
       return;
     }
     // 2. Ajouter le profil dans la table
-    const user_id = signUpData.user?.id || signUpData.user?.id || null;
+    const user_id = signUpData.user?.id || signUpData.session?.user?.id || null;
     const userData = {
       user_id: user_id,
       nom: data.nom,
