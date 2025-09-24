@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <link rel="short icon" href="./public/assets/img/icon/icon-lettermini--C.png">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <style type="text/tailwindcss">
     @layer base {
       :root {
@@ -149,12 +150,12 @@
       class="bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-congo-green/20 max-w-lg w-full px-4 sm:px-8 py-6 sm:py-8 flex flex-col gap-4 animate-fade-in" id="form-animate">
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label class="block text-congo-dark font-semibold mb-1 font-poppins" for="nom">Nom</label>
+          <label class="block text-congo-dark font-semibold mb-1 font-poppins" for="nom">Nom <span class="text-red">*</span></label>
           <input type="text" name="nom" id="nom" required
             class="w-full rounded-lg focus:ring-2 focus:ring-congo-green/60 font-roboto px-4 py-2 text-base outline-none transition bg-transparent" />
         </div>
         <div>
-          <label class="block text-congo-dark font-semibold mb-1 font-poppins" for="prenom">Prénom</label>
+          <label class="block text-congo-dark font-semibold mb-1 font-poppins" for="prenom">Prénom <span class="text-red">*</span></label>
           <input type="text" name="prenom" id="prenom" required
             class="w-full rounded-lg focus:ring-2 focus:ring-congo-green/60 font-roboto px-4 py-2 text-base outline-none transition bg-transparent" />
         </div>
@@ -165,24 +166,30 @@
           class="w-full rounded-lg focus:ring-2 focus:ring-congo-green/60 font-roboto px-4 py-2 text-base outline-none transition bg-transparent" />
       </div>
       <div>
-        <label class="block text-congo-dark font-semibold mb-1 font-poppins" for="email">Adresse e-mail</label>
+        <label class="block text-congo-dark font-semibold mb-1 font-poppins" for="email">Adresse e-mail <span class="text-red">*</span></label>
         <input type="email" name="email" id="email" required
           class="w-full rounded-lg focus:ring-2 focus:ring-congo-green/60 font-roboto px-4 py-2 text-base outline-none transition bg-transparent" />
       </div>
+      <div>
+        <label class="block text-congo-dark font-semibold mb-1 font-poppins" for="password">Mot de passe <span class="text-red">*</span></label>
+        <input type="password" name="password" id="password" required minlength="6"
+          class="w-full rounded-lg focus:ring-2 focus:ring-congo-green/60 font-roboto px-4 py-2 text-base outline-none transition bg-transparent" autocomplete="new-password" />
+        <div class="text-xs text-congo-medium mt-1">Le mot de passe doit contenir au moins 6 caractères.</div>
+      </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label class="block text-congo-dark font-semibold mb-1 font-poppins" for="classe">Classe</label>
+          <label class="block text-congo-dark font-semibold mb-1 font-poppins" for="classe">Classe <span class="text-red">*</span></label>
           <input type="text" name="classe" id="classe" required
             class="w-full rounded-lg focus:ring-2 focus:ring-congo-green/60 font-roboto px-4 py-2 text-base outline-none transition bg-transparent" />
         </div>
         <div>
-          <label class="block text-congo-dark font-semibold mb-1 font-poppins" for="ecole">École</label>
+          <label class="block text-congo-dark font-semibold mb-1 font-poppins" for="ecole">École <span class="text-red">*</span></label>
           <input type="text" name="ecole" id="ecole" required
             class="w-full rounded-lg focus:ring-2 focus:ring-congo-green/60 font-roboto px-4 py-2 text-base outline-none transition bg-transparent" />
         </div>
       </div>
       <div>
-        <label class="block text-congo-dark font-semibold mb-1 font-poppins" for="region">Région</label>
+        <label class="block text-congo-dark font-semibold mb-1 font-poppins" for="region">Région <span class="text-red">*</span></label>
         <select name="region" id="region" required
           class="w-full rounded-lg focus:ring-2 focus:ring-congo-green/60 font-roboto px-4 py-2 text-base outline-none transition bg-transparent">
           <option value="">Sélectionnez votre région</option>
@@ -218,6 +225,12 @@
     </div>
   </main>
   <script>
+      const supabaseUrl = "TON_SUPABASE_URL";
+      const supabaseKey = "TON_SUPABASE_ANON_KEY";
+      const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+    // SUPABASE CODE HERE
+
+
     // --- TIMER SIMPLE --- //
     function timerUnitHTML(type, val, label, colorClass) {
       return `
@@ -270,46 +283,76 @@
     const targetDate = new Date("October 1, 2025 00:00:00").getTime();
     startCountdownSimple(targetDate);
 
-    // FORM PRE-FILL & LOCALSTORAGE
-    document.addEventListener("DOMContentLoaded", () => {
-      ['nom','prenom','telephone','email','classe','ecole','region'].forEach(key => {
-        const field = document.querySelector(`[name=${key}]`);
-        if (field && localStorage.getItem('form_'+key)) field.value = localStorage.getItem('form_'+key);
-      });
-      document.getElementById("signup-form").addEventListener("input", (e) => {
-        if(e.target.name) localStorage.setItem('form_'+e.target.name, e.target.value);
-      });
-    });
+document.getElementById("signup-form").addEventListener("submit", async function(e) {
+  e.preventDefault();
+  const data = {
+    nom: e.target.nom.value.trim(),
+    prenom: e.target.prenom.value.trim(),
+    telephone: e.target.telephone.value.trim(),
+    email: e.target.email.value.trim(),
+    password: e.target.password.value,
+    classe: e.target.classe.value.trim(),
+    ecole: e.target.ecole.value.trim(),
+    region: e.target.region.value.trim()
+  };
+  if (!data.nom || !data.prenom || !data.email || !data.telephone || !data.password) {
+    showError("Veuillez remplir tous les champs obligatoires.");
+    return;
+  }
+  if (data.password.length < 6) {
+    showError("Le mot de passe doit contenir au moins 6 caractères.");
+    return;
+  }
+  const btn = e.target.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.textContent = "Enregistrement...";
 
-    document.getElementById("signup-form").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const data = {
-        nom: e.target.nom.value.trim(),
-        prenom: e.target.prenom.value.trim(),
-        telephone: e.target.telephone.value.trim(),
-        email: e.target.email.value.trim(),
-        classe: e.target.classe.value.trim(),
-        ecole: e.target.ecole.value.trim(),
-        region: e.target.region.value.trim()
-      };
-      if (!data.nom || !data.prenom || !data.email || !data.telephone) {
-        showError("Veuillez remplir tous les champs obligatoires.");
-        return;
-      }
-      fetch("https://hooks.zapier.com/hooks/catch/TON_ZAPIER_WEBHOOK/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-      }).then(res => {
-        if (res.ok) {
-          showSuccess();
-          e.target.reset();
-          ['nom','prenom','telephone','email','classe','ecole','region'].forEach(k=>localStorage.removeItem('form_'+k));
-        } else {
-          showError("Erreur lors de l'inscription, veuillez réessayer.");
-        }
-      }).catch(() => showError("Impossible de se connecter au serveur."));
+  try {
+    // 1. Créer l'utilisateur auth
+    const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
+      email: data.email,
+      password: data.password
     });
+    if (signUpError) {
+      if (signUpError.message.includes("already registered") || signUpError.message.includes("already exists")) {
+        showError("Cet e-mail est déjà utilisé.");
+      } else {
+        showError("Erreur lors de la création du compte : " + signUpError.message);
+      }
+      btn.disabled = false;
+      btn.textContent = "S’inscrire";
+      return;
+    }
+    // 2. Ajouter le profil dans la table
+    const user_id = signUpData.user?.id || signUpData.user?.id || null;
+    const userData = {
+      user_id: user_id,
+      nom: data.nom,
+      prenom: data.prenom,
+      telephone: data.telephone,
+      email: data.email,
+      classe: data.classe,
+      ecole: data.ecole,
+      region: data.region
+    };
+    // Table = "congolibs_sign"
+    const { error: insertError } = await supabase.from("congolibs_sign").insert([userData]);
+    if (insertError) {
+      showError("Utilisateur créé mais erreur lors de l'enregistrement du profil : " + insertError.message);
+      btn.disabled = false;
+      btn.textContent = "S’inscrire";
+      return;
+    }
+
+    showSuccess("Inscription réussie 🎉<br>Un e-mail de confirmation a été envoyé.");
+    e.target.reset();
+    ['nom','prenom','telephone','email','classe','ecole','region'].forEach(k=>localStorage.removeItem('form_'+k));
+  } catch (err) {
+    showError("Erreur inattendue : " + err.message);
+  }
+  btn.disabled = false;
+  btn.textContent = "S’inscrire";
+});
     function showSuccess() {
       const msg = document.getElementById("success-msg");
       msg.classList.remove("hidden");
