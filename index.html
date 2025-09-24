@@ -241,7 +241,7 @@
   <script>
       const supabaseUrl = "https://vgfrmlsmxmhrhoqxemeb.supabase.co";
       const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZnZnJtbHNteG1ocmhvcXhlbWViIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg1MTk1ODEsImV4cCI6MjA3NDA5NTU4MX0.x5PbEUsAONuoPhWjP3jI9MEQffcM6U26dUPlATMviPY";
-      const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+      const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
     // SUPABASE CODE HERE
 
