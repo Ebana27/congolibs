@@ -369,11 +369,12 @@ document.getElementById("signup-form").addEventListener("submit", async function
   btn.textContent = "S’inscrire";
 });
 
-    function showSuccess() {
-      const msg = document.getElementById("success-msg");
-      msg.classList.remove("hidden");
-      setTimeout(() => { msg.classList.add("hidden"); }, 3000);
-    }
+function showSuccess(text) {
+    const msg = document.getElementById("success-msg");
+    msg.innerHTML = text;
+    msg.classList.remove("hidden");
+    setTimeout(() => { msg.classList.add("hidden"); }, 3000);
+}
     function showError(text) {
       const msg = document.getElementById("error-msg");
       msg.textContent = text;
