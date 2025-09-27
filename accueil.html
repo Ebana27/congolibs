@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CongoLibs - Apprendre, progresser, devenir maître de ton avenir</title>
     <link rel="short icon" href="./public/assets/img/icon/icon-lettermini--C.png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./public/output.css">
     <script>
         tailwind.config = {
@@ -27,37 +30,82 @@
         }
     </script>
 </head>
+
 <body class="font-roboto text-gray-900">
     <!-- Navigation -->
-<a href="./tailwindcss.html">TESTE</a>
     <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
                 <div class="flex items-center">
                     <div class="flex-shrink-0 flex items-center">
-                        <img class="w-[250px] h-[30px]" src="./public/assets/img/logo/main_logo.png" alt="logo_congolibs">
+                        <img class="w-[250px] h-[30px]" src="./public/assets/img/logo/main_logo.png"
+                            alt="logo_congolibs">
                     </div>
                 </div>
-                
-                <!-- Navigation Links -->
+
                 <div class="hidden md:block">
                     <ul class="flex items-center space-x-8">
-                        <li><a href="./index.html" class="text-gray-900 font-medium hover:text-congo-medium transition-colors">Accueil</a></li>
-                        <li><a href="#" class="text-gray-700 hover:text-congo-medium transition-colors">Librairie</a></li>
-                        <li><a href="#" class="text-gray-700 hover:text-congo-medium transition-colors">Services</a></li>
-                        <li><a href="#" class="text-gray-700 hover:text-congo-medium transition-colors">Apprendre</a></li>
-                        <li><a href="#" class="text-gray-700 hover:text-congo-medium transition-colors">Commentaire</a></li>
+                        <li><a href="./index.html"
+                                class="text-gray-900 font-medium hover:text-congo-medium transition-colors">Accueil</a>
+                        </li>
+                        <li><a href="#" class="text-gray-700 hover:text-congo-medium transition-colors">Librairie</a>
+                        </li>
+                        <li><a href="#" class="text-gray-700 hover:text-congo-medium transition-colors">Services</a>
+                        </li>
+                        <li><a href="#" class="text-gray-700 hover:text-congo-medium transition-colors">Apprendre</a>
+                        </li>
+                        <li><a href="#" class="text-gray-700 hover:text-congo-medium transition-colors">Commentaire</a>
+                        </li>
                     </ul>
                 </div>
-                
-                <!-- CTA Buttons -->
+
                 <div class="flex items-center space-x-3">
-                    <button class="bg-gradient-to-r from-congo-green to-congo-lime text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition-shadow">
+                    <button
+                        class="hidden md:block bg-gradient-to-r from-congo-green to-congo-lime text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition-shadow">
                         Connexion
                     </button>
-                    <button class="bg-gradient-to-r from-congo-green to-congo-lime w-10 h-9 rounded-lg"></button>
+
+                    <button id="mobile-menu-button"
+                        class="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors z-20"
+                        aria-label="Menu">
+                        <div id="burger-icon" class="space-y-1.5">
+                            <span
+                                class="block h-0.5 w-6 bg-gray-700 transition-transform duration-300 ease-in-out origin-center line-1"></span>
+                            <span
+                                class="block h-0.5 w-6 bg-gray-700 transition-opacity duration-300 ease-in-out line-2"></span>
+                            <span
+                                class="block h-0.5 w-6 bg-gray-700 transition-transform duration-300 ease-in-out origin-center line-3"></span>
+                        </div>
+                    </button>
                 </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu"
+            class="fixed top-0 left-0 w-full h-screen bg-white transition-transform duration-500 ease-in-out transform -translate-y-full md:hidden pt-16 z-10 overflow-y-auto"
+            role="menu" aria-labelledby="mobile-menu-button">
+            <ul class="flex flex-col p-4 space-y-2">
+                <li><a href="./index.html"
+                        class="block py-3 px-2 text-xl text-gray-900 font-medium hover:bg-gray-50 rounded-lg transition-colors"
+                        role="menuitem">Accueil</a></li>
+                <li><a href="#"
+                        class="block py-3 px-2 text-xl text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                        role="menuitem">Librairie</a></li>
+                <li><a href="#"
+                        class="block py-3 px-2 text-xl text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                        role="menuitem">Services</a></li>
+                <li><a href="#"
+                        class="block py-3 px-2 text-xl text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                        role="menuitem">Apprendre</a></li>
+                <li><a href="#"
+                        class="block py-3 px-2 text-xl text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                        role="menuitem">Commentaire</a></li>
+            </ul>
+            <div class="p-4 border-t border-gray-200">
+                <button
+                    class="w-full bg-gradient-to-r from-congo-green to-congo-lime text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow text-lg">
+                    Connexion
+                </button>
             </div>
         </div>
     </nav>
@@ -74,12 +122,14 @@
                     <p class="text-2xl font-light text-congo-dark font-roboto">
                         CongoLibs vous accompagne à chaque étape de votre apprentissage, gratuitement et pour tous.
                     </p>
-                    <button class="bg-gradient-to-r from-congo-green to-congo-lime text-white px-8 py-3 rounded-xl font-bold text-2xl hover:shadow-xl transition-shadow">
+                    <button
+                        class="bg-gradient-to-r from-congo-green to-congo-lime text-white px-8 py-3 rounded-xl font-bold text-2xl hover:shadow-xl transition-shadow">
                         Commencer
                     </button>
                 </div>
                 <!-- Images -->
-                <div class="relative w-full max-w-2xl mx-auto h-80 lg:h-96 flex items-center justify-center -mb-24 z-10">
+                <div
+                    class="relative w-full max-w-2xl mx-auto h-80 lg:h-96 flex items-center justify-center -mb-24 z-10">
                     <!-- Image du fond -->
                     <img src="./public/assets/img/Home/landing page/Blob.png" alt="Image de fond"
                         class="absolute inset-0 w-full h-full object-cover rounded-2xl opacity-80 pointer-events-none z-0" />
@@ -99,11 +149,12 @@
                     Explorer les <span class="text-congo-lime">livres</span> et les documents dans librairie
                 </h2>
             </div>
-            
+
             <!-- Search Bar -->
             <div class="max-w-2xl mx-auto mb-16">
                 <div class="relative">
-                    <input type="text" placeholder="BAC 2025" class="w-full px-6 py-4 bg-teal-50 rounded-2xl border border-gray-200 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-congo-bright">
+                    <input type="text" placeholder="BAC 2025"
+                        class="w-full px-6 py-4 bg-teal-50 rounded-2xl border border-gray-200 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-congo-bright">
                     <button class="absolute right-2 top-2 text-white w-12 h-12 rounded-full">
                         <span class="sr-only">Rechercher</span>
                         🔍
@@ -118,9 +169,10 @@
                         Notre <span class="text-congo-lime">bibliothèque</span> numérique
                     </h3>
                     <p class="text-2xl font-light text-congo-dark">
-                        Accédez à des milliers de ressources éducatives adaptées à tous les niveaux, du primaire à l'université. Nos contenus sont régulièrement mis à jour pour rester pertinents.
+                        Accédez à des milliers de ressources éducatives adaptées à tous les niveaux, du primaire à
+                        l'université. Nos contenus sont régulièrement mis à jour pour rester pertinents.
                     </p>
-                    
+
                     <ul class="space-y-6">
                         <li class="flex items-center">
                             <div class="w-6 h-6 bg-congo-lime rounded-full flex items-center justify-center mr-4">
@@ -147,8 +199,9 @@
                             <span class="text-xl font-light text-congo-dark">Exposés et résumés</span>
                         </li>
                     </ul>
-                    
-                    <button class="bg-gradient-to-r from-congo-lime to-congo-green text-white px-6 py-3 rounded-2xl font-bold hover:shadow-lg transition-shadow">
+
+                    <button
+                        class="bg-gradient-to-r from-congo-lime to-congo-green text-white px-6 py-3 rounded-2xl font-bold hover:shadow-lg transition-shadow">
                         Explorer la bibliothèque
                     </button>
                 </div>
@@ -162,34 +215,38 @@
                             </div>
                             <h4 class="font-medium font-poppins text-gray-900 mb-1">Mathématiques</h4>
                             <p class="text-sm text-congo-dark font-roboto mb-3">Niveau secondaire</p>
-                            <span class="bg-congo-lime/20 text-congo-dark text-xs px-3 py-1 rounded-full">120 leçons</span>
+                            <span class="bg-congo-lime/20 text-congo-dark text-xs px-3 py-1 rounded-full">120
+                                leçons</span>
                         </div>
-                        
+
                         <div class="bg-white rounded-lg p-4 shadow-sm">
                             <div class="w-full h-32 bg-congo-dark/10 rounded-md mb-4 flex items-center justify-center">
                                 <span class="text-congo-dark text-2xl">🔬</span>
                             </div>
                             <h4 class="font-medium font-poppins text-gray-900 mb-1">Sciences</h4>
                             <p class="text-sm text-congo-dark font-roboto mb-3">Niveau secondaire</p>
-                            <span class="bg-congo-lime/20 text-congo-dark text-xs px-3 py-1 rounded-full">85 leçons</span>
+                            <span class="bg-congo-lime/20 text-congo-dark text-xs px-3 py-1 rounded-full">85
+                                leçons</span>
                         </div>
-                        
+
                         <div class="bg-white rounded-lg p-4 shadow-sm">
                             <div class="w-full h-32 bg-congo-dark/10 rounded-md mb-4 flex items-center justify-center">
                                 <span class="text-congo-dark text-2xl">📚</span>
                             </div>
                             <h4 class="font-medium font-poppins text-gray-900 mb-1">Français</h4>
                             <p class="text-sm text-congo-dark font-roboto mb-3">Tous niveaux</p>
-                            <span class="bg-congo-lime/20 text-congo-dark text-xs px-3 py-1 rounded-full">200 leçons</span>
+                            <span class="bg-congo-lime/20 text-congo-dark text-xs px-3 py-1 rounded-full">200
+                                leçons</span>
                         </div>
-                        
+
                         <div class="bg-white rounded-lg p-4 shadow-sm">
                             <div class="w-full h-32 bg-congo-dark/10 rounded-md mb-4 flex items-center justify-center">
                                 <span class="text-congo-dark text-2xl">🌍</span>
                             </div>
                             <h4 class="font-medium font-poppins text-gray-900 mb-1">Histoire-Géo</h4>
                             <p class="text-sm text-congo-dark font-roboto mb-3">Niveau primaire</p>
-                            <span class="bg-congo-lime/20 text-congo-dark text-xs px-3 py-1 rounded-full">75 leçons</span>
+                            <span class="bg-congo-lime/20 text-congo-dark text-xs px-3 py-1 rounded-full">75
+                                leçons</span>
                         </div>
                     </div>
                 </div>
@@ -202,10 +259,12 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold font-poppins mb-4">
-                    Nos <span class="text-congo-lime">Services</span>, Pourquoi choisir <span class="text-congo-lime">CongoLibs</span> ?
+                    Nos <span class="text-congo-lime">Services</span>, Pourquoi choisir <span
+                        class="text-congo-lime">CongoLibs</span> ?
                 </h2>
                 <p class="text-2xl font-light text-congo-dark">
-                    Notre plateforme offre des solutions adaptées aux besoins éducatifs congolais, avec une approche moderne et accessible.
+                    Notre plateforme offre des solutions adaptées aux besoins éducatifs congolais, avec une approche
+                    moderne et accessible.
                 </p>
             </div>
 
@@ -217,7 +276,8 @@
                     </div>
                     <h3 class="text-xl font-normal font-poppins text-gray-900 mb-4">Ressources localisées</h3>
                     <p class="text-gray-600">
-                        Contenus adaptés au programme scolaire congolais, conçus pour répondre aux besoins spécifiques des étudiants.
+                        Contenus adaptés au programme scolaire congolais, conçus pour répondre aux besoins spécifiques
+                        des étudiants.
                     </p>
                 </div>
 
@@ -227,7 +287,8 @@
                     </div>
                     <h3 class="text-xl font-normal font-poppins text-gray-900 mb-4">Outils IA</h3>
                     <p class="text-gray-600">
-                        Outils intelligents pour aider élèves et enseignants à optimiser l'apprentissage et l'enseignement.
+                        Outils intelligents pour aider élèves et enseignants à optimiser l'apprentissage et
+                        l'enseignement.
                     </p>
                 </div>
 
@@ -247,7 +308,8 @@
                     </div>
                     <h3 class="text-xl font-normal font-poppins text-gray-900 mb-4">Orientation & Séries</h3>
                     <p class="text-gray-600">
-                        Arrêtez de vous demander quelle série choisir... Découvrez les parcours adaptés pour devenir informaticien, douanier, médecin, etc.
+                        Arrêtez de vous demander quelle série choisir... Découvrez les parcours adaptés pour devenir
+                        informaticien, douanier, médecin, etc.
                     </p>
                 </div>
 
@@ -257,7 +319,8 @@
                     </div>
                     <h3 class="text-xl font-normal font-poppins text-gray-900 mb-4">Universités & Écoles</h3>
                     <p class="text-gray-600">
-                        Pas seulement une université, mais la meilleure pour vous. Actualités et informations centralisées sur les établissements.
+                        Pas seulement une université, mais la meilleure pour vous. Actualités et informations
+                        centralisées sur les établissements.
                     </p>
                 </div>
 
@@ -267,68 +330,78 @@
                     </div>
                     <h3 class="text-xl font-normal font-poppins text-gray-900 mb-4">Allô Prof</h3>
                     <p class="text-gray-600">
-                        Besoin d'un encadrement ? Souscrivez et trouvez votre prof particulier adapté à vos besoins spécifiques.
+                        Besoin d'un encadrement ? Souscrivez et trouvez votre prof particulier adapté à vos besoins
+                        spécifiques.
                     </p>
                 </div>
             </div>
 
             <div class="text-center">
-                <button class="bg-gray-900 text-white px-8 py-4 rounded-full font-normal text-lg hover:bg-gray-800 transition-colors">
+                <button
+                    class="bg-gray-900 text-white px-8 py-4 rounded-full font-normal text-lg hover:bg-gray-800 transition-colors">
                     Explorer les services →
                 </button>
             </div>
-        </div> 
+        </div>
     </section>
 
     <!-- Learning Section -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-bold font-poppins text-center mb-16">
-            Explorez <span class="text-congo-lime">nos ressources</span> sur Congolibs
-        </h2>
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold font-poppins text-center mb-16">
+                Explorez <span class="text-congo-bright">l’apprentissage</span> sur Congolibs
+            </h2>
 
-        <div class="grid sm:grid-cols-3 gap-12 text-center">
+            <!-- Responsive grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
 
-            <!-- Bloc 1 - Quiz -->
-            <div>
-                <div
-                    class="w-32 h-32 mx-auto rounded-full bg-congo-lime flex items-center justify-center shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/150x150?text=Quiz" alt="Quiz" class="w-full h-full object-cover">
+                <!-- Bloc 1 - Quiz -->
+                <div class="p-4 rounded-xl transition-transform md:hover:scale-105 md:hover:shadow-xl">
+                    <div
+                        class="w-40 h-40 mx-auto rounded-full bg-congo-lime flex items-center justify-center shadow-lg overflow-hidden">
+                        <img src="https://placehold.co/200x200?text=Quiz" alt="Quiz" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="mt-6 text-2xl font-poppins font-semibold text-congo-dark">Quiz & Exercices</h3>
+                    <p class="mt-2 text-congo-dark text-base">
+                        Testez vos connaissances avec des quiz interactifs et des exercices pratiques.
+                    </p>
+                    <a href="/apprentissage"
+                        class="mt-3 inline-block text-congo-lime underline font-semibold">Découvrir</a>
                 </div>
-                <h3 class="mt-6 text-2xl font-semibold text-gray-800">Quiz & Exercices</h3>
-                <p class="mt-2 text-gray-600 text-base">
-                    Testez vos connaissances avec des quiz interactifs et des exercices pratiques.
-                </p>
-            </div>
 
-            <!-- Bloc 2 - Vidéos -->
-            <div>
-                <div
-                    class="w-32 h-32 mx-auto rounded-full bg-congo-green flex items-center justify-center shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/150x150?text=Vidéo" alt="Vidéos éducatives"
-                        class="w-full h-full object-cover">
+                <!-- Bloc 2 - Vidéos -->
+                <div class="p-4 rounded-xl transition-transform md:hover:scale-105 md:hover:shadow-xl">
+                    <div
+                        class="w-40 h-40 mx-auto rounded-full bg-congo-green flex items-center justify-center shadow-lg overflow-hidden">
+                        <img src="https://placehold.co/200x200?text=Vidéo" alt="Vidéos"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="mt-6 text-2xl font-poppins font-semibold text-congo-dark">Vidéos éducatives</h3>
+                    <p class="mt-2 text-congo-dark text-base">
+                        Apprenez plus facilement grâce à des vidéos explicatives et tutoriels clairs.
+                    </p>
+                    <a href="/apprentissage"
+                        class="mt-3 inline-block text-congo-lime underline font-semibold">Découvrir</a>
                 </div>
-                <h3 class="mt-6 text-2xl font-semibold text-gray-800">Vidéos éducatives</h3>
-                <p class="mt-2 text-gray-600 text-base">
-                    Apprenez plus facilement grâce à des vidéos explicatives et tutoriels clairs.
-                </p>
-            </div>
 
-            <!-- Bloc 3 - Blog -->
-            <div>
-                <div
-                    class="w-32 h-32 mx-auto rounded-full bg-blue-600 flex items-center justify-center shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/150x150?text=Blog" alt="Blog" class="w-full h-full object-cover">
+                <!-- Bloc 3 - Blog -->
+                <div class="p-4 rounded-xl transition-transform md:hover:scale-105 md:hover:shadow-xl">
+                    <div
+                        class="w-40 h-40 mx-auto rounded-full bg-congo-dark flex items-center justify-center shadow-lg overflow-hidden">
+                        <img src="https://placehold.co/200x200?text=Blog" alt="Blog" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="mt-6 text-2xl font-poppins font-semibold text-congo-dark">Blog & Actualités</h3>
+                    <p class="mt-2 text-congo-dark text-base">
+                        Restez informé des nouveautés, conseils et actualités éducatives.
+                    </p>
+                    <a href="/apprentissage"
+                        class="mt-3 inline-block text-congo-lime underline font-semibold">Découvrir</a>
                 </div>
-                <h3 class="mt-6 text-2xl font-semibold text-gray-800">Blog & Actualités</h3>
-                <p class="mt-2 text-gray-600 text-base">
-                    Restez informé des nouveautés, conseils et actualités éducatives.
-                </p>
-            </div>
 
+
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
     <!-- Comments Section -->
@@ -336,7 +409,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold font-poppins mb-4">
-                    <span class="text-congo-lime">Vous</span> êtes, <span class="text-congo-lime">nous</span> sommes. Ce que nos utilisateurs <span class="text-congo-lime">pensent</span>.
+                    <span class="text-congo-lime">Vous</span> êtes, <span class="text-congo-lime">nous</span> sommes. Ce
+                    que nos utilisateurs <span class="text-congo-lime">pensent</span>.
                 </h2>
                 <p class="text-2xl font-light text-congo-dark">
                     commentez, suggérez et inspirer. Nous sommes à votre écoute.
@@ -346,7 +420,8 @@
             <div class="grid lg:grid-cols-2 gap-12">
                 <!-- Comments -->
                 <div class="space-y-6">
-                    <div class="bg-gradient-to-r from-gray-50 via-teal-50 to-emerald-50 rounded-xl border-l-4 border-congo-bright p-6">
+                    <div
+                        class="bg-gradient-to-r from-gray-50 via-teal-50 to-emerald-50 rounded-xl border-l-4 border-congo-bright p-6">
                         <div class="flex items-start space-x-4 mb-4">
                             <div class="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center">
                                 <span class="text-white font-bold">M</span>
@@ -365,11 +440,13 @@
                             </div>
                         </div>
                         <p class="text-gray-700">
-                            Excellente initiative ! J'adore la simplicité de cette interface. Le design est vraiment moderne et agréable à utiliser.
+                            Excellente initiative ! J'adore la simplicité de cette interface. Le design est vraiment
+                            moderne et agréable à utiliser.
                         </p>
                     </div>
 
-                    <div class="bg-gradient-to-r from-gray-50 via-teal-50 to-emerald-50 rounded-xl border-l-4 border-congo-bright p-6">
+                    <div
+                        class="bg-gradient-to-r from-gray-50 via-teal-50 to-emerald-50 rounded-xl border-l-4 border-congo-bright p-6">
                         <div class="flex items-start space-x-4 mb-4">
                             <div class="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center">
                                 <span class="text-white font-bold">J</span>
@@ -388,11 +465,13 @@
                             </div>
                         </div>
                         <p class="text-gray-700">
-                            Très bonne expérience utilisateur. La couleur verte apporte vraiment une sensation de fraîcheur et d'énergie positive.
+                            Très bonne expérience utilisateur. La couleur verte apporte vraiment une sensation de
+                            fraîcheur et d'énergie positive.
                         </p>
                     </div>
 
-                    <div class="bg-gradient-to-r from-gray-50 via-teal-50 to-emerald-50 rounded-xl border-l-4 border-congo-bright p-6">
+                    <div
+                        class="bg-gradient-to-r from-gray-50 via-teal-50 to-emerald-50 rounded-xl border-l-4 border-congo-bright p-6">
                         <div class="flex items-start space-x-4 mb-4">
                             <div class="w-10 h-10 bg-emerald-700 rounded-full flex items-center justify-center">
                                 <span class="text-white font-bold">S</span>
@@ -411,7 +490,8 @@
                             </div>
                         </div>
                         <p class="text-gray-700">
-                            Interface intuitive et responsive. Parfait pour encourager l'interaction et les échanges constructifs.
+                            Interface intuitive et responsive. Parfait pour encourager l'interaction et les échanges
+                            constructifs.
                         </p>
                     </div>
                 </div>
@@ -422,19 +502,22 @@
                         <div class="w-5 h-5 text-congo-bright mr-3">💬</div>
                         <h3 class="text-xl font-bold text-gray-800">Ajouter un commentaire</h3>
                     </div>
-                    
+
                     <form class="space-y-4">
                         <div>
                             <label class="block text-gray-700 text-sm font-medium font-poppins mb-2">Nom</label>
-                            <input type="text" placeholder="Votre nom..." class="w-full px-4 py-3 bg-white rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-congo-bright">
+                            <input type="text" placeholder="Votre nom..."
+                                class="w-full px-4 py-3 bg-white rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-congo-bright">
                         </div>
-                        
+
                         <div>
                             <label class="block text-gray-700 text-sm font-medium font-poppins mb-2">Commentaire</label>
-                            <textarea placeholder="Écrivez votre commentaire ici..." rows="4" class="w-full px-4 py-3 bg-white rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-congo-bright resize-none"></textarea>
+                            <textarea placeholder="Écrivez votre commentaire ici..." rows="4"
+                                class="w-full px-4 py-3 bg-white rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-congo-bright resize-none"></textarea>
                         </div>
-                        
-                        <button type="submit" class="bg-gradient-to-r from-congo-green to-congo-lime text-white px-6 py-2 rounded-lg font-medium hover:shadow-lg transition-shadow">
+
+                        <button type="submit"
+                            class="bg-gradient-to-r from-congo-green to-congo-lime text-white px-6 py-2 rounded-lg font-medium hover:shadow-lg transition-shadow">
                             Publier
                         </button>
                     </form>
@@ -480,8 +563,10 @@
                         <li><a href="#" class="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Licence</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-white transition-colors">A propos</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Conditions d'utilisation</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Politique de confidentialité</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Conditions
+                                d'utilisation</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Politique de
+                                confidentialité</a></li>
                     </ul>
                 </div>
 
@@ -516,30 +601,62 @@
 
     <!-- Mobile Menu Toggle Script -->
     <script>
-        // Mobile menu functionality can be added here if needed
-        document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scrolling for anchor links
-            const links = document.querySelectorAll('a[href^="#"]');
-            links.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const burgerIcon = document.getElementById('burger-icon');
+
+            menuButton.addEventListener('click', () => {
+                const isMenuOpen = mobileMenu.classList.contains('translate-y-0');
+
+                // 1. Gérer l'ouverture/fermeture du menu
+                if (isMenuOpen) {
+                    // Fermer le menu : glisser vers le haut
+                    mobileMenu.classList.remove('translate-y-0');
+                    mobileMenu.classList.add('-translate-y-full');
+                    // Retirer la classe de blocage du défilement du corps
+                    document.body.classList.remove('overflow-hidden');
+                    menuButton.setAttribute('aria-expanded', 'false');
+
+                } else {
+                    // Ouvrir le menu : glisser vers le bas
+                    mobileMenu.classList.remove('-translate-y-full');
+                    mobileMenu.classList.add('translate-y-0');
+                    // Ajouter la classe de blocage du défilement du corps
+                    document.body.classList.add('overflow-hidden');
+                    menuButton.setAttribute('aria-expanded', 'true');
+                }
+
+                // 2. Animer l'icône du Burger en Croix (X)
+                const line1 = burgerIcon.querySelector('.line-1');
+                const line2 = burgerIcon.querySelector('.line-2');
+                const line3 = burgerIcon.querySelector('.line-3');
+
+                if (isMenuOpen) {
+                    // Fermé -> Revenir à l'icône Burger
+                    line1.classList.remove('rotate-45', 'translate-y-2');
+                    line2.classList.remove('opacity-0');
+                    line3.classList.remove('-rotate-45', '-translate-y-2');
+                } else {
+                    // Ouvert -> Animer en Croix (X)
+                    line1.classList.add('rotate-45', 'translate-y-2');
+                    line2.classList.add('opacity-0'); // Masquer la ligne du milieu
+                    line3.classList.add('-rotate-45', '-translate-y-2');
+                }
+            });
+
+            // Optionnel : Fermer le menu si un lien est cliqué
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    // Déclencher le clic sur le bouton pour fermer
+                    if (mobileMenu.classList.contains('translate-y-0')) {
+                        menuButton.click();
                     }
                 });
             });
-
-            // Form submission handling
-            const commentForm = document.querySelector('form');
-            if (commentForm) {
-                commentForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    // Add form submission logic here
-                    alert('Commentaire envoyé ! Merci pour votre retour.');
-                });
-            }
         });
+
     </script>
 </body>
+
 </html>
