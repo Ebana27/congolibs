@@ -122,9 +122,9 @@
     @media (max-width: 420px) { .xs\:flex-row { flex-direction: column; } .xs\:w-auto { width: 100%; } }
   </style>
 </head>
-<body class="relative min-h-screen">
+<body class="relative min-h-screen bg">
   <!-- IMMERSED SCHOOL ELEMENTS -->
-  <div class="pointer-events-none fixed fixed inset-0 -z-10">
+  <div aria-hidden="true" class="pointer-events-none fixed fixed inset-0 -z-10">
     <img src="https://cdn.pixabay.com/photo/2016/03/31/20/11/blackboard-1299832_1280.png"
          class="absolute top-0 left-0 w-28 opacity-10" alt="" />
     <img src="https://cdn.pixabay.com/photo/2013/07/12/16/51/pencil-151938_1280.png"
@@ -158,7 +158,7 @@
       Inscrivez-vous à la rentrée scolaire 2025 !
     </h1>
     <p class="text-base sm:text-lg md:text-xl font-roboto text-congo-medium mb-6 text-center max-w-2xl" id="desc-animate">
-      Rejoignez la communauté des élèves passionnés. Le compte à rebours vers la rentrée a commencé !
+      Rejoignez la communauté des élèves passionnés. Le compte à rebours vers la rentrée a commencé !
     </p>
     <!-- TIMER SIMPLE -->
     <div id="timer" class="timer-group mb-8 w-fit mx-auto transition-all select-none" style="min-width:270px"></div>
@@ -229,7 +229,7 @@
         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.596 0 0 .594 0 1.326V22.67c0 .73.595 1.324 1.326 1.324h11.495V14.7h-3.13v-3.62h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.098 2.794.142v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.764v2.313h3.587l-.467 3.62h-3.12V24h6.116c.73 0 1.325-.594 1.325-1.326V1.326C24 .594 23.405 0 22.675 0"></path></svg>
         Facebook
       </a>
-      <a href="https://wa.me/" target="_blank"
+      <a href="https://wa.me/242067756084" target="_blank"
          class="flex items-center gap-2 text-white bg-congo-green hover:bg-white hover:text-congo-lime px-5 py-2 rounded-lg shadow transition-transform hover:scale-105 font-semibold font-roboto w-full xs:w-auto justify-center">
         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 32 32"><path d="M16 .667C7.641.667.667 7.641.667 16c0 2.823.747 5.574 2.18 7.992L.049 31.951a.667.667 0 0 0 .617.617l7.959-2.798A15.252 15.252 0 0 0 16 31.334C24.359 31.334 31.333 24.36 31.333 16S24.359.667 16 .667zm0 28.001c-2.619 0-5.178-.734-7.362-2.124l-.527-.329-4.727 1.662 1.629-4.693-.343-.54C3.069 20.607 2.334 18.332 2.334 16c0-7.513 6.153-13.667 13.666-13.667S29.666 8.487 29.666 16 23.513 28.668 16 28.668zm7.325-8.592c-.403-.202-2.387-1.18-2.756-1.314-.37-.135-.64-.202-.911.203-.27.404-1.044 1.314-1.28 1.585-.235.27-.47.304-.873.102-.402-.203-1.698-.626-3.236-1.996-1.197-1.07-2.005-2.386-2.24-2.79-.235-.404-.025-.621.177-.823.182-.181.403-.47.604-.705.201-.236.268-.404.403-.673.134-.27.067-.505-.034-.706-.102-.202-.911-2.197-1.248-3.006-.33-.792-.667-.683-.911-.695-.235-.012-.505-.015-.776-.015-.27 0-.707.101-1.078.505-.37.404-1.415 1.383-1.415 3.37 0 1.988 1.448 3.906 1.651 4.18.202.27 2.803 4.288 6.761 5.846.946.33 1.683.527 2.26.672.949.242 1.813.208 2.498.127.762-.09 2.387-.977 2.724-1.921.336-.943.336-1.75.236-1.922-.101-.171-.37-.27-.772-.473z"/></svg>
         WhatsApp
