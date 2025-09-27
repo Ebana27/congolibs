@@ -601,60 +601,71 @@
 
     <!-- Mobile Menu Toggle Script -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const burgerIcon = document.getElementById('burger-icon');
+document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const burgerIcon = document.getElementById('burger-icon');
 
-            menuButton.addEventListener('click', () => {
-                const isMenuOpen = mobileMenu.classList.contains('translate-y-0');
+    menuButton.addEventListener('click', () => {
+        // La classe 'translate-y-0' indique que le menu est visible et non plus en '-translate-y-full'
+        const isMenuOpen = mobileMenu.classList.contains('translate-y-0');
 
-                // 1. Gérer l'ouverture/fermeture du menu
-                if (isMenuOpen) {
-                    // Fermer le menu : glisser vers le haut
-                    mobileMenu.classList.remove('translate-y-0');
-                    mobileMenu.classList.add('-translate-y-full');
-                    // Retirer la classe de blocage du défilement du corps
-                    document.body.classList.remove('overflow-hidden');
-                    menuButton.setAttribute('aria-expanded', 'false');
+        // 1. Gérer l'ouverture/fermeture du menu
+        if (isMenuOpen) {
+            // Fermer le menu
+            mobileMenu.classList.remove('translate-y-0');
+            mobileMenu.classList.add('-translate-y-full');
+            
+            // Attendre la fin de l'animation pour le masquer complètement
+            mobileMenu.addEventListener('transitionend', function handler() {
+                mobileMenu.classList.add('hidden'); // Masquer après la transition
+                mobileMenu.removeEventListener('transitionend', handler);
+            }, { once: true });
+            
+            document.body.classList.remove('overflow-hidden');
+            menuButton.setAttribute('aria-expanded', 'false');
 
-                } else {
-                    // Ouvrir le menu : glisser vers le bas
-                    mobileMenu.classList.remove('-translate-y-full');
-                    mobileMenu.classList.add('translate-y-0');
-                    // Ajouter la classe de blocage du défilement du corps
-                    document.body.classList.add('overflow-hidden');
-                    menuButton.setAttribute('aria-expanded', 'true');
-                }
-
-                // 2. Animer l'icône du Burger en Croix (X)
-                const line1 = burgerIcon.querySelector('.line-1');
-                const line2 = burgerIcon.querySelector('.line-2');
-                const line3 = burgerIcon.querySelector('.line-3');
-
-                if (isMenuOpen) {
-                    // Fermé -> Revenir à l'icône Burger
-                    line1.classList.remove('rotate-45', 'translate-y-2');
-                    line2.classList.remove('opacity-0');
-                    line3.classList.remove('-rotate-45', '-translate-y-2');
-                } else {
-                    // Ouvert -> Animer en Croix (X)
-                    line1.classList.add('rotate-45', 'translate-y-2');
-                    line2.classList.add('opacity-0'); // Masquer la ligne du milieu
-                    line3.classList.add('-rotate-45', '-translate-y-2');
-                }
+        } else {
+            // Ouvrir le menu
+            mobileMenu.classList.remove('hidden'); // Rendre visible avant la transition
+            // On utilise requestAnimationFrame pour s'assurer que la classe 'hidden' est retirée avant l'application de la transition
+            requestAnimationFrame(() => {
+                mobileMenu.classList.remove('-translate-y-full');
+                mobileMenu.classList.add('translate-y-0');
             });
 
-            // Optionnel : Fermer le menu si un lien est cliqué
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    // Déclencher le clic sur le bouton pour fermer
-                    if (mobileMenu.classList.contains('translate-y-0')) {
-                        menuButton.click();
-                    }
-                });
-            });
+            document.body.classList.add('overflow-hidden');
+            menuButton.setAttribute('aria-expanded', 'true');
+        }
+
+        // 2. Animer l'icône du Burger en Croix (X)
+        const line1 = burgerIcon.querySelector('.line-1');
+        const line2 = burgerIcon.querySelector('.line-2');
+        const line3 = burgerIcon.querySelector('.line-3');
+
+        if (isMenuOpen) {
+            // Fermé -> Revenir à l'icône Burger
+            line1.classList.remove('rotate-45', 'translate-y-2');
+            line2.classList.remove('opacity-0');
+            line3.classList.remove('-rotate-45', '-translate-y-2');
+        } else {
+            // Ouvert -> Animer en Croix (X)
+            line1.classList.add('rotate-45', 'translate-y-2');
+            line2.classList.add('opacity-0'); // Masquer la ligne du milieu
+            line3.classList.add('-rotate-45', '-translate-y-2');
+        }
+    });
+
+    // Optionnel : Fermer le menu si un lien est cliqué
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            // Déclencher le clic sur le bouton pour fermer
+            if (mobileMenu.classList.contains('translate-y-0')) {
+                menuButton.click();
+            }
         });
+    });
+});
 
     </script>
 </body>
